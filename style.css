@@ -1,5 +1,5 @@
 /*
- * Basic styles
+ * Site header
  */
 
 body {
@@ -9,10 +9,6 @@ body {
   background-image: url("images/main-bg.png");
   background-size: 20px 10px;
 }
-
-/*
- * Main header
- */
 
 #site-header {
   background-color: #fff;
