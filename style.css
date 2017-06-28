@@ -5,7 +5,8 @@
 body {
   font-family: 'Fira Sans', sans-serif;
   font-size: 1rem;
-  background-image: url("/images/main-bg.png");
+  background-color: #eaebf0;
+  background-image: url("images/main-bg.png");
   background-size: 20px 10px;
 }
 
@@ -13,7 +14,7 @@ body {
  * Main header
  */
 
-.main-header {
+#main-header {
   background-color: #fff;
 }
 
@@ -55,4 +56,90 @@ body {
 .banner-logo {
   width: 419px;
   height: 131px;
+}
+
+/*
+ * Content
+ */
+
+#development-section {
+  padding-top: 64px;
+  padding-bottom: 64px;
+  text-align: center;
+}
+
+.development-title {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 24px;
+  line-height: 36px;
+  color: #3e4247;
+}
+
+.development-desc {
+  margin: 0;
+  line-height: 1.5rem;
+  color: #3e4247;
+}
+
+.development-submit {
+  margin-top: 16px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-right: 32px;
+  padding-left: 32px;
+  border: 0;
+  text-align: center;
+  color: #fff;
+  background: #000;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.complex-item {
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-bottom: 48px;
+}
+
+.complex-link {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  text-decoration: none;
+  background: #fff;
+}
+
+.complex-link:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.complex-info {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  padding-left: 32px;
+  padding-right: 86px;
+  border-bottom: 2px solid #646971;
+}
+
+.complex-city {
+  margin: 0;
+  font-family: Monaco, Menlo, Consolas, monospace;
+  color: #646971;
+  text-transform: uppercase;
+}
+
+.complex-title {
+  margin-top: 24px;
+  margin-bottom: 8px;
+  font-size: 40px;
+  line-height: 1.4;
+  color: #000000;
+}
+
+.complex-desc {
+  margin: 0;
+  line-height: 1.5;
+  color: #3e4247;
 }
