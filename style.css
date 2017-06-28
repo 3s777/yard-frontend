@@ -115,6 +115,11 @@ body {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
+.complex-photo {
+  width: 491px;
+  height: 350px;
+}
+
 .complex-info {
   padding-top: 24px;
   padding-bottom: 24px;
