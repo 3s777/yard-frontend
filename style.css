@@ -1,0 +1,58 @@
+/*
+ * Basic styles
+ */
+
+body {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 1rem;
+  background-image: url("/images/main-bg.png");
+  background-size: 20px 10px;
+}
+
+/*
+ * Main header
+ */
+
+.main-header {
+  background-color: #fff;
+}
+
+.header-wrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.logo {
+  width: 179px;
+  height: 24px;
+}
+
+.main-header-nav {
+  text-align: right;
+}
+
+.main-header-nav-item {
+  margin-left: 28px;
+  line-height: 1.5rem;
+  color: #3e4247;
+  text-decoration: none;
+}
+
+.banner {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  line-height: 0;
+  text-align: center;
+  background-color: #161616;
+}
+
+.banner-logo {
+  width: 419px;
+  height: 131px;
+}
