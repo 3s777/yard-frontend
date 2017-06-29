@@ -1,5 +1,5 @@
 /*
- * Site header
+ * Global header
  */
 
 body {
@@ -12,31 +12,29 @@ body {
   background-size: 20px 10px;
 }
 
-#site-header {
+.global-header {
   background-color: #fff;
 }
 
-.header-wrap {
+.global-header-wrap {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
   padding-top: 20px;
   padding-bottom: 20px;
-  padding-left: 8px;
-  padding-right: 8px;
 }
 
-.logo {
+.global-header-logo {
   width: 179px;
   height: 24px;
 }
 
-.site-header-nav {
+.global-header-nav {
   text-align: right;
 }
 
-.site-header-nav-item {
+.global-header-nav-link {
   margin-left: 28px;
   line-height: 1.5;
   color: #3e4247;
@@ -60,11 +58,11 @@ body {
  * Content
  */
 
-#content {
+.content {
   padding-bottom: 48px;
 }
 
-#development-section {
+.development-section {
   padding-top: 64px;
   padding-bottom: 64px;
   text-align: center;
@@ -78,13 +76,13 @@ body {
   color: #3e4247;
 }
 
-.development-desc {
+.development-description {
   margin: 0;
   line-height: 1.5;
   color: #3e4247;
 }
 
-.development-submit {
+.development-contact-button {
   margin-top: 16px;
   padding-top: 12px;
   padding-bottom: 12px;
@@ -98,17 +96,12 @@ body {
   cursor: pointer;
 }
 
-.complex-item {
-  padding-left: 8px;
-  padding-right: 8px;
-  margin-bottom: 48px;
-}
-
 .complex-link {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
+  margin-bottom: 48px;
   text-decoration: none;
   background: #fff;
 }
@@ -145,17 +138,17 @@ body {
   color: #000000;
 }
 
-.complex-desc {
+.complex-description {
   margin: 0;
   line-height: 1.5;
   color: #3e4247;
 }
 
 /*
- * Footer
+ * Global footer
  */
 
-#site-footer {
+.global-footer {
   padding-top: 32px;
   padding-bottom: 32px;
   background: #111;
@@ -166,30 +159,30 @@ body {
   padding-right: 8px;
 }
 
-.site-footer-title {
+.global-footer-title {
   margin-top: 0;
   margin-bottom: 8px;
   font-size: 14px;
   color: #646971;
 }
 
-.site-footer-info {
+.global-footer-info {
   font-size: 14px;
   font-weight: 300;
   color: #a9afb6;
 }
 
-.site-footer-info.last-child {
+.global-footer-info.last-child {
   margin-top: 24px;
 }
 
-.site-footer-nav {
+.global-footer-nav {
   padding-top: 16px;
   border-top: 2px solid #3e4247;
   line-height: 1.5;
 }
 
-.site-footer-nav-item {
+.global-footer-nav-link {
   display: block;
   margin-top: 8px;
   font-size: 14px;
@@ -198,11 +191,11 @@ body {
   text-decoration: none;
 }
 
-.site-footer-nav-item.last-child {
+.global-footer-nav-link.last-child {
   margin-top: 16px;
 }
 
-.site-footer-desc {
+.global-footer-description {
   margin-top: 95px;
   font-size: 11px;
   font-weight: 300;
