@@ -172,7 +172,7 @@ body {
   color: #a9afb6;
 }
 
-.global-footer-info.last-child {
+.global-footer-info:last-child {
   margin-top: 24px;
 }
 
@@ -191,7 +191,7 @@ body {
   text-decoration: none;
 }
 
-.global-footer-nav-link.last-child {
+.global-footer-nav-complexes .global-footer-nav-link:last-child {
   margin-top: 16px;
 }
 
