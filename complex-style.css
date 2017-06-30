@@ -3,8 +3,8 @@
  */
 
 .complex {
-  padding-top: 24px;
-  border-top: 1px solid #eaebf0;
+  padding-top: 1.5rem;
+  border-top: 0.0625rem solid #eaebf0;
   background-color: #fff;
 }
 
@@ -16,7 +16,7 @@
 
 .complex-header .complex-title {
   margin-top: 0;
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
   font-family: 'Philosopher', sans-serif;
   font-size: 2rem;
   line-height: 1.13;
@@ -25,8 +25,8 @@
 
 .complex-address {
   margin-top: 0;
-  margin-bottom: 16px;
-  font-size: 14px;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
   font-weight: 300;
   line-height: 1.57;
   color: #a9afb6;
@@ -38,19 +38,19 @@
 }
 
 .complex-favorite-button {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  border: 1px solid #e0e0e1;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: 0.0625rem solid #e0e0e1;
   box-sizing: border-box;
-  font-size: 10px;
+  font-size: 0.625rem;
   font-weight: 300;
   line-height: 1;
   text-decoration: none;
   color: #00779a;
   background: #fff;
-  border-radius: 2px;
+  border-radius: 0.125rem;
   cursor: pointer;
 }
 
@@ -59,28 +59,28 @@
 }
 
 .complex-gallery-count {
-  margin-top: -42px;
+  margin-top: -2.625rem;
 }
 
 .complex-gallery-count-button {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   border: 0;
-  font-size: 10px;
+  font-size: 0.625rem;
   font-weight: 300;
   line-height: 1;
   color: #fff;
   text-decoration: none;
   background-color: #00779a;
-  border-radius: 2px;
+  border-radius: 0.125rem;
 }
 
 .complex-meta {
-  padding-top: 42px;
-  padding-bottom: 24px;
-  border-bottom: 1px solid #e0e0e1;
+  padding-top: 2.625rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 0.0625rem solid #e0e0e1;
   display: flex;
   font-family: 'Philosopher', sans-serif;
 }
@@ -89,7 +89,7 @@
   margin-top: 0;
   margin-bottom: 0;
   margin-left: 0;
-  margin-right: 48px;
+  margin-right: 3rem;
   font-size: 1.5rem;
   font-weight: bold;
   line-height: 1.13;
@@ -98,8 +98,8 @@
 
 .complex-meta-small {
   display: block;
-  margin-top: 10px;
-  font-size: 14px;
+  margin-top: 0.625rem;
+  font-size: 0.875rem;
   font-weight: 300;
   line-height: 1.57;
   font-family: 'Fira sans', sans-serif;
@@ -107,17 +107,17 @@
 }
 
 .complex-architect {
-  padding-right: 24px;
+  padding-right: 1.5rem;
 }
 
 .complex-specifications {
-  padding-top: 32px;
-  padding-bottom: 38px;
+  padding-top: 2rem;
+  padding-bottom: 2.375rem;
 }
 
 .complex-specifications-title {
   margin-top: 0;
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
   font-family: 'Philosopher', sans-serif;
   font-size: 1.5rem;
   font-weight: bold;
@@ -133,7 +133,7 @@
 
 .complex-specifications-list-title {
   flex: 0 0 50%;
-  margin-bottom: 11px;
+  margin-bottom: 0.6875rem;
   font-size: 1rem;
   line-height: 1.38;
   color: #a9afb6;
@@ -150,23 +150,23 @@
 }
 
 .compex-description {
-  padding-bottom: 28px;
-  border-bottom: 1px solid #e0e0e1;
+  padding-bottom: 1.75rem;
+  border-bottom: 0.0625rem solid #e0e0e1;
 }
 
 .complex-description-title {
   margin: 0;
   font-family: 'Philosopher', sans-serif;
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 1.13;
   color: #3e4247;
 }
 
 .complex-description-content-paragraph {
   margin-top: 0;
-  margin-bottom: 28px;
+  margin-bottom: 1.75rem;
   font-size: 1rem;
-  line-height: 24px;
+  line-height: 1.5rem;
   text-align: left;
   color: #3e4247;
 }
@@ -176,13 +176,13 @@
 }
 
 .complex-structure {
-  padding-top: 32px;
-  padding-bottom: 64px;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
 }
 
 .complex-structure-title {
   margin-top: 0;
-  margin-bottom: 12px;
+  margin-bottom: 0.75rem;
   font-family: 'Philosopher', sans-serif;
   font-size: 1.5rem;
   font-weight: bold;
@@ -191,8 +191,8 @@
 }
 
 .complex-structure-item {
-  margin-bottom: 8px;
-  font-size: 16px;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
   line-height: 1.38;
   color: #3e4247;
 }
@@ -202,14 +202,14 @@
 }
 
 .complex-offers {
-  padding-top: 64px;
-  padding-bottom: 64px;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
   background-color: #f4f5f9;
 }
 
 .complex-offers-title {
   margin-top: 0;
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
   font-family: 'Philosopher', sans-serif;
   font-size: 1.5rem;
   font-weight: bold;
@@ -219,50 +219,50 @@
 }
 
 .complex-offer {
-  padding-top: 24px;
-  padding-bottom: 24px;
-  padding-left: 32px;
-  padding-right: 32px;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   background: #fff;
 }
 
 .complex-offer-title {
   margin-top: 0;
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
   font-family: 'Philosopher', sans-serif;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: bold;
   line-height: 1;
   color: #3e4247;
 }
 
 .complex-offer-info {
-  margin-bottom: 25px;
+  margin-bottom: 1.5625rem;
 }
 
 .complex-offer-info-title {
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
   font-size: 1rem;
-  line-height: 22px;
+  line-height: 1.375rem;
   color: #a9afb6;
 }
 
 .complex-offer-info-value {
   margin-left: 0;
   font-size: 1rem;
-  line-height: 22px;
+  line-height: 1.375rem;
   color: #3e4247;
 }
 
 .complex-offer-info-button {
   display: block;
-  margin-top: 33px;
+  margin-top: 2.0625rem;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  padding-right: 30px;
-  padding-left: 30px;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-right: 1.875rem;
+  padding-left: 1.875rem;
   border: 0;
   font-family: 'Fira Sans', sans-serif;
   font-size: 1rem;
@@ -270,18 +270,18 @@
   color: #fff;
   line-height: 1;
   background-color: #000;
-  border-radius: 2px;
+  border-radius: 0.125rem;
   cursor: pointer;
 }
 
 .complex-place {
-  padding-top: 64px;
-  padding-bottom: 214px;
+  padding-top: 4rem;
+  padding-bottom: 13.375rem;
   background-color: #3e4247;
 }
 
 .complex-place-name {
-  margin-top: 116px;
+  margin-top: 7.25rem;
   font-family: 'Philosopher', sans-serif;
   font-size: 1.5rem;
   font-weight: bold;
@@ -289,9 +289,9 @@
 }
 
 .complex-place-title {
-  margin-top: 48px;
-  margin-bottom: 48px;
-  padding-right: 16px;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  padding-right: 1rem;
   font-size: 3rem;
   font-family: 'Philosopher', sans-serif;
   font-weight: bold;
@@ -307,32 +307,32 @@
 }
 
 .complex-place-photo {
-  width: 600px;
-  height: 560px;
+  width: 37.5rem;
+  height: 35rem;
 }
 
 .complex-map {
-  margin-top: -153px;
-  padding-bottom: 60px;
+  margin-top: -9.5625rem;
+  padding-bottom: 3.75rem;
 }
 
 .complex-map-photo {
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-  width: 600px;
-  height: 306px;
+  box-shadow: 0 0 1.875rem rgba(0, 0, 0, 0.5);
+  width: 37.5rem;
+  height: 19.125rem;
 }
 
 .complex-map-places {
   margin: 0;
-  padding-top: 24px;
+  padding-top: 1.5rem;
   background: #fff;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 1.875rem rgba(0, 0, 0, 0.5);
 }
 
 .complex-map-places-name {
-  margin-bottom: 8px;
-  padding-left: 24px;
-  padding-right: 24px;
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.38;
@@ -341,11 +341,11 @@
 
 .complex-map-places-value {
   margin-left: 0;
-  margin-bottom: 26px;
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-bottom: 24px;
-  border-bottom: 1px solid #e0e0e1;
+  margin-bottom: 1.625rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 0.0625rem solid #e0e0e1;
   font-size: 1rem;
   line-height: 1.38;
   color: #a9afb6;
