@@ -1,0 +1,357 @@
+/*
+ * Complex
+ */
+
+.complex {
+  padding-top: 1.5rem;
+  border-top: 0.0625rem solid #eaebf0;
+  background-color: #fff;
+}
+
+.complex-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.complex-header .complex-title {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-family: 'Philosopher', sans-serif;
+  font-size: 2rem;
+  line-height: 1.13;
+  color: #3e4247;
+}
+
+.complex-address {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.57;
+  color: #a9afb6;
+}
+
+.complex-favorite {
+  line-height: 0;
+  box-sizing: border-box;
+}
+
+.complex-favorite-button {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: 0.0625rem solid #e0e0e1;
+  box-sizing: border-box;
+  font-size: 0.625rem;
+  font-weight: 300;
+  line-height: 1;
+  text-decoration: none;
+  color: #00779a;
+  background: #fff;
+  border-radius: 0.125rem;
+  cursor: pointer;
+}
+
+.complex-gallery-wrap {
+  display: flex;
+}
+
+.complex-gallery-count {
+  margin-top: -2.625rem;
+}
+
+.complex-gallery-count-button {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: 0;
+  font-size: 0.625rem;
+  font-weight: 300;
+  line-height: 1;
+  color: #fff;
+  text-decoration: none;
+  background-color: #00779a;
+  border-radius: 0.125rem;
+}
+
+.complex-meta {
+  padding-top: 2.625rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 0.0625rem solid #e0e0e1;
+  display: flex;
+  font-family: 'Philosopher', sans-serif;
+}
+
+.complex-meta-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 3rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.13;
+  color: #3e4247;
+}
+
+.complex-meta-small {
+  display: block;
+  margin-top: 0.625rem;
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.57;
+  font-family: 'Fira sans', sans-serif;
+  color: #a9afb6;
+}
+
+.complex-architect {
+  padding-right: 1.5rem;
+}
+
+.complex-specifications {
+  padding-top: 2rem;
+  padding-bottom: 2.375rem;
+}
+
+.complex-specifications-title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-family: 'Philosopher', sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.3;
+  color: #3e4247;
+}
+
+.complex-specifications-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+.complex-specifications-list-title {
+  flex: 0 0 50%;
+  margin-bottom: 0.6875rem;
+  font-size: 1rem;
+  line-height: 1.38;
+  color: #a9afb6;
+}
+
+.complex-specifications-list-value {
+  flex: 0 0 50%;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.56;
+  text-align: left;
+  color: #3e4247;
+}
+
+.compex-description {
+  padding-bottom: 1.75rem;
+  border-bottom: 0.0625rem solid #e0e0e1;
+}
+
+.complex-description-title {
+  margin: 0;
+  font-family: 'Philosopher', sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.13;
+  color: #3e4247;
+}
+
+.complex-description-content-paragraph {
+  margin-top: 0;
+  margin-bottom: 1.75rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-align: left;
+  color: #3e4247;
+}
+
+.complex-description-content-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.complex-structure {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+.complex-structure-title {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-family: 'Philosopher', sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.3;
+  color: #3e4247;
+}
+
+.complex-structure-item {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.38;
+  color: #3e4247;
+}
+
+.complex-structure-item:last-child {
+  margin-bottom: 0;
+}
+
+.complex-offers {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background-color: #f4f5f9;
+}
+
+.complex-offers-title {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-family: 'Philosopher', sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.3;
+  color: #3e4247;
+  text-align: center;
+}
+
+.complex-offer {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  background: #fff;
+}
+
+.complex-offer-title {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-family: 'Philosopher', sans-serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+  line-height: 1;
+  color: #3e4247;
+}
+
+.complex-offer-info {
+  margin-bottom: 1.5625rem;
+}
+
+.complex-offer-info-title {
+  margin-bottom: 0.625rem;
+  font-size: 1rem;
+  line-height: 1.375rem;
+  color: #a9afb6;
+}
+
+.complex-offer-info-value {
+  margin-left: 0;
+  font-size: 1rem;
+  line-height: 1.375rem;
+  color: #3e4247;
+}
+
+.complex-offer-info-button {
+  display: block;
+  margin-top: 2.0625rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-right: 1.875rem;
+  padding-left: 1.875rem;
+  border: 0;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1;
+  background-color: #000;
+  border-radius: 0.125rem;
+  cursor: pointer;
+}
+
+.complex-place {
+  padding-top: 4rem;
+  padding-bottom: 13.375rem;
+  background-color: #3e4247;
+}
+
+.complex-place-name {
+  margin-top: 7.25rem;
+  font-family: 'Philosopher', sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #a9afb6;
+}
+
+.complex-place-title {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  padding-right: 1rem;
+  font-size: 3rem;
+  font-family: 'Philosopher', sans-serif;
+  font-weight: bold;
+  line-height: 1.25;
+  color: #ffffff;
+}
+
+.complex-place-link {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #00779a;
+  text-decoration: none;
+}
+
+.complex-place-photo {
+  width: 37.5rem;
+  height: 35rem;
+}
+
+.complex-map {
+  margin-top: -9.5625rem;
+  padding-bottom: 3.75rem;
+}
+
+.complex-map-photo {
+  box-shadow: 0 0 1.875rem rgba(0, 0, 0, 0.5);
+  width: 37.5rem;
+  height: 19.125rem;
+}
+
+.complex-map-places {
+  margin: 0;
+  padding-top: 1.5rem;
+  background: #fff;
+  box-shadow: 0 0 1.875rem rgba(0, 0, 0, 0.5);
+}
+
+.complex-map-places-name {
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.38;
+  color: #3e4247;
+}
+
+.complex-map-places-value {
+  margin-left: 0;
+  margin-bottom: 1.625rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 0.0625rem solid #e0e0e1;
+  font-size: 1rem;
+  line-height: 1.38;
+  color: #a9afb6;
+}
+
+.complex-map-places-value:last-child {
+  margin-bottom: 0;
+  border: 0;
+}
