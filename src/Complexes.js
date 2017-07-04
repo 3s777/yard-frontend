@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default () => {
   return (
     <main className="content">
       <div className="container">
-        <a className="complex-link" href="#">
+        <Link to="/complex" className="complex-link">
           <img
             className="complex-photo"
             src={process.env.PUBLIC_URL + "/bitmap.jpg"}
@@ -21,8 +22,8 @@ export default () => {
               83 individually unique and luxury loft apartments.
             </p>
           </div>
-        </a>
-        <a className="complex-link" href="#">
+        </Link>
+        <Link to="/complex" className="complex-link">
           <img
             className="complex-photo"
             src={process.env.PUBLIC_URL + "/bitmap.jpg"}
@@ -40,8 +41,8 @@ export default () => {
               proportioned.
             </p>
           </div>
-        </a>
-        <a className="complex-link" href="#">
+        </Link>
+        <Link to="/complex" className="complex-link">
           <img
             className="complex-photo"
             src={process.env.PUBLIC_URL + "/bitmap.jpg"}
@@ -60,7 +61,7 @@ export default () => {
               the neighborhood.
             </p>
           </div>
-        </a>
+        </Link>
       </div>
     </main>
   );
