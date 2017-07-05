@@ -1,11 +1,12 @@
 import React from "react";
+import { Grid, Row, Col } from "react-flexbox-grid";
 
 export default () => {
   return (
     <section className="development-section">
-      <div className="container">
-        <div className="row center-lg">
-          <div className="col-lg-8">
+      <Grid>
+        <Row center="lg">
+          <Col lg={8}>
             <h2 className="development-title">Discover Our New Developments</h2>
             <p className="development-description">
               Compass brings a modern approach to new development marketing and
@@ -15,9 +16,9 @@ export default () => {
             <button className="development-contact-button">
               Contact The Team
             </button>
-          </div>
-        </div>
-      </div>
+          </Col>
+        </Row>
+      </Grid>
     </section>
   );
 };

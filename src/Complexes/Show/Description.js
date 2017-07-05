@@ -1,13 +1,14 @@
 import React from "react";
+import { Row, Col } from "react-flexbox-grid";
 
 export default () => {
   return (
     <div className="compex-description">
-      <div className="row">
-        <div className="col-lg-2">
+      <Row>
+        <Col lg={2}>
           <h2 className="complex-description-title">Описание</h2>
-        </div>
-        <div className="col-lg-10">
+        </Col>
+        <Col lg={10}>
           <article className="complex-description-content">
             <p className="complex-description-content-paragraph">
               ВТБ Арена Парк — современный квартал в 10 минутах езды от
@@ -41,8 +42,8 @@ export default () => {
               рабочего перерыва.
             </p>
           </article>
-        </div>
-      </div>
+        </Col>
+      </Row>
     </div>
   );
 };

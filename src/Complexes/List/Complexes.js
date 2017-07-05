@@ -1,14 +1,15 @@
 import React from "react";
-import ComplexCard from "./ComplexCard.js";
+import Card from "./Card.js";
+import { Grid } from "react-flexbox-grid";
 
 export default () => {
   return (
     <main className="content">
-      <div className="container">
-        <ComplexCard />
-        <ComplexCard />
-        <ComplexCard />
-      </div>
+      <Grid>
+        <Card />
+        <Card />
+        <Card />
+      </Grid>
     </main>
   );
 };

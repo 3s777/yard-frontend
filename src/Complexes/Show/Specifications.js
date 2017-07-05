@@ -1,11 +1,12 @@
 import React from "react";
+import { Grid, Row, Col } from "react-flexbox-grid";
 
 export default () => {
   return (
     <div className="complex-specifications">
       <h2 className="complex-specifications-title">Характеристики</h2>
-      <div className="row">
-        <div className="col-lg-4">
+      <Row>
+        <Col lg={4}>
           <dl className="complex-specifications-list">
             <dt className="complex-specifications-list-title">
               Количество квартир:
@@ -18,8 +19,8 @@ export default () => {
               от 5.3 до 143.5 млн
             </dd>
           </dl>
-        </div>
-        <div className="col-lg-4">
+        </Col>
+        <Col lg={4}>
           <dl className="complex-specifications-list">
             <dt className="complex-specifications-list-title">
               Количество квартир:
@@ -34,8 +35,8 @@ export default () => {
             </dt>
             <dd className="complex-specifications-list-value">1 503</dd>
           </dl>
-        </div>
-        <div className="col-lg-4">
+        </Col>
+        <Col lg={4}>
           <dl className="complex-specifications-list">
             <dt className="complex-specifications-list-title">
               Количество квартир:
@@ -50,8 +51,8 @@ export default () => {
             </dt>
             <dd className="complex-specifications-list-value">1 503</dd>
           </dl>
-        </div>
-      </div>
+        </Col>
+      </Row>
     </div>
   );
 };

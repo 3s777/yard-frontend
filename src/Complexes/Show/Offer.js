@@ -1,8 +1,9 @@
 import React from "react";
+import { Col } from "react-flexbox-grid";
 
 export default () => {
   return (
-    <div className="col-lg-4">
+    <Col lg={4}>
       <div className="complex-offer">
         <h3 className="complex-offer-title">1-комнатные квартиры</h3>
         <dl className="complex-offer-info">
@@ -19,6 +20,6 @@ export default () => {
           Посмотреть предложения
         </button>
       </div>
-    </div>
+    </Col>
   );
 };
