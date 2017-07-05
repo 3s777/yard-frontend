@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid, Row } from "react-flexbox-grid";
-import Offer from "./Offer.js";
+import Offer from "./Offer";
 
 export default () => {
   return (

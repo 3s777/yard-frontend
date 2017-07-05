@@ -1,19 +1,19 @@
 import React from "react";
 import { Grid, Row, Col } from "react-flexbox-grid";
-import ComplexHeader from "./ComplexHeader.js";
-import Gallery from "./Gallery.js";
-import Meta from "./Meta.js";
-import Specifications from "./Specifications.js";
-import Description from "./Description.js";
-import Structure from "./Structure.js";
-import Offers from "./Offers.js";
-import Place from "./Place.js";
-import Map from "./Map.js";
+import Header from "./Header";
+import Gallery from "./Gallery";
+import Meta from "./Meta";
+import Specifications from "./Specifications";
+import Description from "./Description";
+import Structure from "./Structure";
+import Offers from "./Offers";
+import Place from "./Place";
+import Map from "./Map";
 
 export default () => {
   return (
     <main className="complex">
-      <ComplexHeader />
+      <Header />
       <Gallery />
       <Grid>
         <Meta />

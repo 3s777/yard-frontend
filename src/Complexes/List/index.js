@@ -1,14 +1,21 @@
 import React from "react";
-import Banner from "./Banner.js";
-import DevelopmentSection from "./DevelopmentSection.js";
-import Complexes from "./Complexes.js";
+import { Grid } from "react-flexbox-grid";
+import Banner from "./Banner";
+import DevelopmentSection from "./DevelopmentSection";
+import Card from "./Card";
 
 export default () => {
   return (
     <div>
       <Banner />
       <DevelopmentSection />
-      <Complexes />
+      <main className="content">
+        <Grid>
+          <Card />
+          <Card />
+          <Card />
+        </Grid>
+      </main>
     </div>
   );
 };
