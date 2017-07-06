@@ -11,7 +11,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="compass">
+        <div>
           <Header />
           <Route exact path="/" component={Complexes} />
           <Route path="/complex" component={Complex} />

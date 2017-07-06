@@ -1,19 +1,55 @@
 import React from "react";
+import styled from "styled-components";
+
+const Meta = styled.div`
+  padding-top: 2.625rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 0.0625rem solid #e0e0e1;
+  display: flex;
+  font-family: 'Philosopher', sans-serif;
+`;
+
+const Title = styled.h2`
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 3rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.13;
+  color: #3e4247;
+`;
+
+const Architect = styled.h2`
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 3rem;
+  padding-right: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.13;
+  color: #3e4247;
+`;
+
+const SubTitle = styled.small`
+  display: block;
+  margin-top: 0.625rem;
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.57;
+  font-family: 'Fira sans', sans-serif;
+  color: #a9afb6;
+`;
 
 export default () => {
   return (
-    <div className="complex-meta">
-      <h2 className="complex-meta-title">
-        950<small className="complex-meta-small">предложений</small>
-      </h2>
-      <h2 className="complex-meta-title">
-        John McAslan + Partners<small className="complex-meta-small">
-          архитектор
-        </small>
-      </h2>
-      <h2 className="complex-meta-title">
-        Группа «ПСН»<small className="complex-meta-small">застройщик</small>
-      </h2>
-    </div>
+    <Meta>
+      <Title>950<SubTitle>предложений</SubTitle></Title>
+      <Architect>
+        John McAslan + Partners<SubTitle>архитектор</SubTitle>
+      </Architect>
+      <Title>Группа «ПСН»<SubTitle>застройщик</SubTitle></Title>
+    </Meta>
   );
 };
