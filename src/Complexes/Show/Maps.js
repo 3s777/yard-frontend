@@ -20,7 +20,7 @@ const Places = styled.dl`
   box-shadow: 0 0 1.875rem rgba(0, 0, 0, 0.5);
 `;
 
-const Name = styled.dt`
+const Key = styled.dt`
   margin-bottom: 0.5rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -61,11 +61,11 @@ export default () => {
           </Col>
           <Col lg={6}>
             <Places>
-              <Name>Красный Октябрь</Name>
+              <Key>Красный Октябрь</Key>
               <Value>24 минуты, 6 км</Value>
-              <Name>World className</Name>
+              <Key>World className</Key>
               <Value>2 минуты, 300 м</Value>
-              <Name>Третьяковская галерея</Name>
+              <Key>Третьяковская галерея</Key>
               <Value>14 минут, 4 км</Value>
             </Places>
           </Col>

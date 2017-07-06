@@ -24,7 +24,7 @@ const Info = styled.dl`
   margin-bottom: 1.5625rem;
 `;
 
-const Name = styled.dt`
+const Key = styled.dt`
   margin-bottom: 0.625rem;
   font-size: 1rem;
   line-height: 1.375rem;
@@ -64,11 +64,11 @@ export default () => {
       <Offer>
         <Title>1-комнатные квартиры</Title>
         <Info>
-          <Name>Площадь</Name>
+          <Key>Площадь</Key>
           <Value>от 59 до 120 м²</Value>
         </Info>
         <Info>
-          <Name>Стоимость</Name>
+          <Key>Стоимость</Key>
           <Value>от 20.3 до 84.2 млн руб</Value>
         </Info>
         <OfferButton>
