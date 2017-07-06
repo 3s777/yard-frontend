@@ -24,21 +24,21 @@ const Info = styled.dl`
   margin-bottom: 1.5625rem;
 `;
 
-const OfferKey = styled.dt`
+const Label = styled.dt`
   margin-bottom: 0.625rem;
   font-size: 1rem;
   line-height: 1.375rem;
   color: #a9afb6;
 `;
 
-const OfferValue = styled.dd`
+const Value = styled.dd`
   margin-left: 0;
   font-size: 1rem;
   line-height: 1.375rem;
   color: #3e4247;
 `;
 
-const OfferButton = styled.button`
+const Button = styled.button`
   display: block;
   margin-top: 2.0625rem;
   margin-left: auto;
@@ -64,16 +64,16 @@ export default () => {
       <Offer>
         <Title>1-комнатные квартиры</Title>
         <Info>
-          <OfferKey>Площадь</OfferKey>
-          <OfferValue>от 59 до 120 м²</OfferValue>
+          <Label>Площадь</Label>
+          <Value>от 59 до 120 м²</Value>
         </Info>
         <Info>
-          <OfferKey>Стоимость</OfferKey>
-          <OfferValue>от 20.3 до 84.2 млн руб</OfferValue>
+          <Label>Стоимость</Label>
+          <Value>от 20.3 до 84.2 млн руб</Value>
         </Info>
-        <OfferButton>
+        <Button>
           Посмотреть предложения
-        </OfferButton>
+        </Button>
       </Offer>
     </Col>
   );
