@@ -1,18 +1,60 @@
 import React from "react";
 import { Grid, Row, Col } from "react-flexbox-grid";
+import styled from "styled-components";
+
+const Header = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+`;
+
+const Title = styled.h1`
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-family: 'Philosopher', sans-serif;
+  font-size: 2rem;
+  line-height: 1.13;
+  color: #3e4247;
+`;
+
+const Address = styled.p`
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.57;
+  color: #a9afb6;
+`;
+
+const Button = styled.button`
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: 0.0625rem solid #e0e0e1;
+  box-sizing: border-box;
+  font-size: 0.625rem;
+  font-weight: 300;
+  line-height: 1;
+  text-decoration: none;
+  color: #00779a;
+  background: #fff;
+  border-radius: 0.125rem;
+  cursor: pointer;
+`;
 
 export default () => {
   return (
     <Grid>
-      <div className="complex-wrap">
-        <div className="complex-header">
-          <h1 className="complex-title">Жилой комплекс «Полянка/44»</h1>
-          <p className="complex-address">
+      <Header>
+        <div>
+          <Title>Жилой комплекс «Полянка/44»</Title>
+          <Address>
             Район Якиманка, улица Большая Полянка, дом 44 • 119180
-          </p>
+          </Address>
         </div>
-        <button className="complex-favorite-button">В избранное</button>
-      </div>
+        <Button>В избранное</Button>
+      </Header>
     </Grid>
   );
 };
