@@ -6,11 +6,11 @@ const Gallery = styled.div`
   display: flex;
 `;
 
-const Count = styled.div`
+const Counter = styled.div`
   margin-top: -2.625rem;
 `;
 
-const CountButton = styled.button`
+const CounterButton = styled.button`
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: 1rem;
@@ -55,13 +55,13 @@ export default () => {
           alt="Photo 5"
         />
       </Gallery>
-      <Count>
+      <Counter>
         <Grid>
-          <CountButton>
+          <CounterButton>
             41 фотография
-          </CountButton>
+          </CounterButton>
         </Grid>
-      </Count>
+      </Counter>
     </div>
   );
 };

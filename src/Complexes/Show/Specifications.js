@@ -23,7 +23,7 @@ const List = styled.dl`
   margin: 0;
 `;
 
-const Key = styled.dt`
+const SpecificationKey = styled.dt`
   flex: 0 0 50%;
   margin-bottom: 0.6875rem;
   font-size: 1rem;
@@ -31,7 +31,7 @@ const Key = styled.dt`
   color: #a9afb6;
 `;
 
-const Value = styled.dd`
+const SpecificationValue = styled.dd`
   flex: 0 0 50%;
   margin: 0;
   font-size: 1rem;
@@ -48,32 +48,32 @@ export default () => {
       <Row>
         <Col lg={4}>
           <List>
-            <Key>Количество квартир:</Key>
-            <Value>1 503</Value>
-            <Key>Статус:</Key>
-            <Value>Квартиры</Value>
-            <Key>Цены:</Key>
-            <Value>от 5.3 до 143.5 млн</Value>
+            <SpecificationKey>Количество квартир:</SpecificationKey>
+            <SpecificationValue>1 503</SpecificationValue>
+            <SpecificationKey>Статус:</SpecificationKey>
+            <SpecificationValue>Квартиры</SpecificationValue>
+            <SpecificationKey>Цены:</SpecificationKey>
+            <SpecificationValue>от 5.3 до 143.5 млн</SpecificationValue>
           </List>
         </Col>
         <Col lg={4}>
           <List>
-            <Key>Количество квартир:</Key>
-            <Value>1 503</Value>
-            <Key>Количество квартир:</Key>
-            <Value>1 503</Value>
-            <Key>Количество квартир:</Key>
-            <Value>1 503</Value>
+            <SpecificationKey>Количество квартир:</SpecificationKey>
+            <SpecificationValue>1 503</SpecificationValue>
+            <SpecificationKey>Количество квартир:</SpecificationKey>
+            <SpecificationValue>1 503</SpecificationValue>
+            <SpecificationKey>Количество квартир:</SpecificationKey>
+            <SpecificationValue>1 503</SpecificationValue>
           </List>
         </Col>
         <Col lg={4}>
           <List>
-            <Key>Количество квартир:</Key>
-            <Value>1 503</Value>
-            <Key>Количество квартир:</Key>
-            <Value>1 503</Value>
-            <Key>Количество квартир:</Key>
-            <Value>1 503</Value>
+            <SpecificationKey>Количество квартир:</SpecificationKey>
+            <SpecificationValue>1 503</SpecificationValue>
+            <SpecificationKey>Количество квартир:</SpecificationKey>
+            <SpecificationValue>1 503</SpecificationValue>
+            <SpecificationKey>Количество квартир:</SpecificationKey>
+            <SpecificationValue>1 503</SpecificationValue>
           </List>
         </Col>
       </Row>

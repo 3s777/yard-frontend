@@ -22,8 +22,8 @@ const Info = styled.p`
   font-weight: 300;
   color: #a9afb6;
 
-&:last-child {
-  margin-top: 1.5rem;
+  &:last-child {
+    margin-top: 1.5rem;
   }
 `;
 
@@ -41,8 +41,8 @@ const ComplexesLink = styled(Link)`
   color: #fff;
   text-decoration: none;
 
-&:last-child {
-  margin-top: 1rem;
+  &:last-child {
+    margin-top: 1rem;
   }
 `;
 

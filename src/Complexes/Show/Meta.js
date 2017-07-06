@@ -20,18 +20,6 @@ const Title = styled.h2`
   color: #3e4247;
 `;
 
-const Architect = styled.h2`
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 3rem;
-  padding-right: 1.5rem;
-  font-size: 1.5rem;
-  font-weight: bold;
-  line-height: 1.13;
-  color: #3e4247;
-`;
-
 const SubTitle = styled.small`
   display: block;
   margin-top: 0.625rem;
@@ -46,9 +34,7 @@ export default () => {
   return (
     <Meta>
       <Title>950<SubTitle>предложений</SubTitle></Title>
-      <Architect>
-        John McAslan + Partners<SubTitle>архитектор</SubTitle>
-      </Architect>
+      <Title>John McAslan + Partners<SubTitle>архитектор</SubTitle></Title>
       <Title>Группа «ПСН»<SubTitle>застройщик</SubTitle></Title>
     </Meta>
   );

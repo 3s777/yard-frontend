@@ -10,9 +10,9 @@ const Card = styled(Link)`
   margin-bottom: 3rem;
   text-decoration: none;
   background: #fff;
-
-&:hover {
-  box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.3);
+  
+  &:hover {
+    box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.3);
   }
 `;
 
@@ -29,7 +29,7 @@ const Info = styled.div`
   border-bottom: 0.125rem solid #646971;
 `;
 
-const City = styled.p`
+const District = styled.p`
   margin: 0;
   font-family: Monaco, Menlo, Consolas, monospace;
   color: #646971;
@@ -59,7 +59,7 @@ export default () => {
         alt="764 Metropolitan Avenue photo"
       />
       <Info>
-        <City>SOUTH BEACH, SAN FRANCISCO</City>
+        <District>SOUTH BEACH, SAN FRANCISCO</District>
         <Title>764 Metropolitan Avenue</Title>
         <Description>
           The Lewis Steel Building is a masterful industrial conversion

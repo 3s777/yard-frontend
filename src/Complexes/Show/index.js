@@ -6,7 +6,7 @@ import Gallery from "./Gallery";
 import Meta from "./Meta";
 import Specifications from "./Specifications";
 import Description from "./Description";
-import Structure from "./Structure";
+import Infrastructure from "./Infrastructure";
 import Offers from "./Offers";
 import Place from "./Place";
 import Maps from "./Maps";
@@ -26,7 +26,7 @@ export default () => {
         <Meta />
         <Specifications />
         <Description />
-        <Structure />
+        <Infrastructure />
       </Grid>
       <Offers />
       <Place />

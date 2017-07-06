@@ -20,7 +20,7 @@ const Places = styled.dl`
   box-shadow: 0 0 1.875rem rgba(0, 0, 0, 0.5);
 `;
 
-const Key = styled.dt`
+const Place = styled.dt`
   margin-bottom: 0.5rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -30,7 +30,7 @@ const Key = styled.dt`
   color: #3e4247;
 `;
 
-const Value = styled.dd`
+const Distance = styled.dd`
   margin-left: 0;
   margin-bottom: 1.625rem;
   padding-left: 1.5rem;
@@ -41,9 +41,9 @@ const Value = styled.dd`
   line-height: 1.38;
   color: #a9afb6;
 
-&:last-child {
-  margin-bottom: 0;
-  border: 0;
+  &:last-child {
+    margin-bottom: 0;
+    border: 0;
   }
 `;
 
@@ -61,12 +61,12 @@ export default () => {
           </Col>
           <Col lg={6}>
             <Places>
-              <Key>Красный Октябрь</Key>
-              <Value>24 минуты, 6 км</Value>
-              <Key>World className</Key>
-              <Value>2 минуты, 300 м</Value>
-              <Key>Третьяковская галерея</Key>
-              <Value>14 минут, 4 км</Value>
+              <Place>Красный Октябрь</Place>
+              <Distance>24 минуты, 6 км</Distance>
+              <Place>World className</Place>
+              <Distance>2 минуты, 300 м</Distance>
+              <Place>Третьяковская галерея</Place>
+              <Distance>14 минут, 4 км</Distance>
             </Places>
           </Col>
         </Row>

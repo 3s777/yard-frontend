@@ -26,7 +26,7 @@ const Address = styled.p`
   color: #a9afb6;
 `;
 
-const Favorite = styled.button`
+const Button = styled.button`
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: 1rem;
@@ -53,7 +53,7 @@ export default () => {
             Район Якиманка, улица Большая Полянка, дом 44 • 119180
           </Address>
         </div>
-        <Favorite>В избранное</Favorite>
+        <Button>В избранное</Button>
       </Header>
     </Grid>
   );
