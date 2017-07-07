@@ -20,15 +20,26 @@ const Complex = styled.main`
 export default () => {
   return (
     <Complex>
-      <Header />
+      <Header
+        title="Жилой комплекс «Полянка/44»"
+        Address="Район Якиманка, улица Большая Полянка, дом 44 • 119180"
+      />
       <Gallery />
       <Grid>
-        <Meta />
-        <Specifications />
+        <Meta
+          counter="950"
+          architect="John McAslan + Partners"
+          group="Группа «ПСН»"
+        />
+        <Specifications
+          flatcounter="1503"
+          flatstatus="Квартиры"
+          flatprice={{ min: 8.4, max: 20.2 }}
+        />
         <Description />
         <Infrastructure />
       </Grid>
-      <Offers />
+      <Offers offerstitle="Предложения в ЖК «Полянка/44»" />
       <Place />
       <Maps />
     </Complex>

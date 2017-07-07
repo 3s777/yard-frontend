@@ -30,12 +30,12 @@ const SubTitle = styled.small`
   color: #a9afb6;
 `;
 
-export default () => {
+export default props => {
   return (
     <Meta>
-      <Title>950<SubTitle>предложений</SubTitle></Title>
-      <Title>John McAslan + Partners<SubTitle>архитектор</SubTitle></Title>
-      <Title>Группа «ПСН»<SubTitle>застройщик</SubTitle></Title>
+      <Title>{props.counter}<SubTitle>предложений</SubTitle></Title>
+      <Title>{props.architect}<SubTitle>архитектор</SubTitle></Title>
+      <Title>{props.group}<SubTitle>застройщик</SubTitle></Title>
     </Meta>
   );
 };

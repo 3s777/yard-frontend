@@ -58,18 +58,18 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-export default () => {
+export default props => {
   return (
     <Col lg={4}>
       <Offer>
-        <Title>1-комнатные квартиры</Title>
+        <Title>{props.offertitle}</Title>
         <Info>
           <Label>Площадь</Label>
-          <Value>от 59 до 120 м²</Value>
+          <Value>от {props.area.min} до {props.area.max} м²</Value>
         </Info>
         <Info>
           <Label>Стоимость</Label>
-          <Value>от 20.3 до 84.2 млн руб</Value>
+          <Value>от {props.price.min} до {props.price.max} млн.руб</Value>
         </Info>
         <Button>
           Посмотреть предложения

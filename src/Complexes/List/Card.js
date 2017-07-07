@@ -10,7 +10,7 @@ const Card = styled(Link)`
   margin-bottom: 3rem;
   text-decoration: none;
   background: #fff;
-  
+
   &:hover {
     box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.3);
   }
@@ -50,23 +50,14 @@ const Description = styled.p`
   color: #3e4247;
 `;
 
-export default () => {
+export default props => {
   return (
     <Card to="/complex">
-      <Photo
-        src={process.env.PUBLIC_URL + "/bitmap.jpg"}
-        srcSet="/bitmap@2x.jpg 2x, /bitmap@3x.jpg 3x"
-        alt="764 Metropolitan Avenue photo"
-      />
+      <Photo src={props.src} srcSet={props.srcset} alt={props.alt} />
       <Info>
-        <District>SOUTH BEACH, SAN FRANCISCO</District>
-        <Title>764 Metropolitan Avenue</Title>
-        <Description>
-          The Lewis Steel Building is a masterful industrial conversion
-          located in the heart of Williamsburg. Located at 76 North 4th
-          Street, the former 1930's steel factory has been transformed into
-          83 individually unique and luxury loft apartments.
-        </Description>
+        <District>{props.district}</District>
+        <Title>{props.title}</Title>
+        <Description>{props.children}</Description>
       </Info>
     </Card>
   );

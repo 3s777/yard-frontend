@@ -41,7 +41,7 @@ const Value = styled.dd`
   color: #3e4247;
 `;
 
-export default () => {
+export default props => {
   return (
     <Specifications>
       <Title>Характеристики</Title>
@@ -49,31 +49,31 @@ export default () => {
         <Col lg={4}>
           <List>
             <Label>Количество квартир:</Label>
-            <Value>1 503</Value>
+            <Value>{props.flatcounter}</Value>
             <Label>Статус:</Label>
-            <Value>Квартиры</Value>
+            <Value>{props.flatstatus}</Value>
             <Label>Цены:</Label>
-            <Value>от 5.3 до 143.5 млн</Value>
+            <Value>от {props.flatprice.min} до {props.flatprice.max} млн</Value>
           </List>
         </Col>
         <Col lg={4}>
           <List>
             <Label>Количество квартир:</Label>
-            <Value>1 503</Value>
+            <Value>{props.flatcounter}</Value>
             <Label>Количество квартир:</Label>
-            <Value>1 503</Value>
+            <Value>{props.flatcounter}</Value>
             <Label>Количество квартир:</Label>
-            <Value>1 503</Value>
+            <Value>{props.flatcounter}</Value>
           </List>
         </Col>
         <Col lg={4}>
           <List>
             <Label>Количество квартир:</Label>
-            <Value>1 503</Value>
+            <Value>{props.flatcounter}</Value>
             <Label>Количество квартир:</Label>
-            <Value>1 503</Value>
+            <Value>{props.flatcounter}</Value>
             <Label>Количество квартир:</Label>
-            <Value>1 503</Value>
+            <Value>{props.flatcounter}</Value>
           </List>
         </Col>
       </Row>
