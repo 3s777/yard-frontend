@@ -27,12 +27,12 @@ export default () => {
       <Gallery />
       <Grid>
         <Meta
-          counter="950"
+          counter={950}
           architect="John McAslan + Partners"
           group="Группа «ПСН»"
         />
         <Specifications
-          counter="1503"
+          counter={1503}
           status="Квартиры"
           price={{ min: 8.4, max: 20.2 }}
         />
