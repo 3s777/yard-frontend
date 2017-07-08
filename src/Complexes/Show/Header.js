@@ -43,14 +43,14 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-export default () => {
+export default props => {
   return (
     <Grid>
       <Header>
         <div>
-          <Title>Жилой комплекс «Полянка/44»</Title>
+          <Title>{props.title}</Title>
           <Address>
-            Район Якиманка, улица Большая Полянка, дом 44 • 119180
+            {props.address}
           </Address>
         </div>
         <Button>В избранное</Button>

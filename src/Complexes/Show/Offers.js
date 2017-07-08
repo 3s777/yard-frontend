@@ -20,17 +20,29 @@ const Title = styled.h2`
   text-align: center;
 `;
 
-export default () => {
+export default props => {
   return (
     <Offers>
       <Grid>
         <Title>
-          Предложения в ЖК «Полянка/44»
+          {props.title}
         </Title>
         <Row>
-          <Offer />
-          <Offer />
-          <Offer />
+          <Offer
+            title="1-комнатные квартиры"
+            area={{ min: 59, max: 120 }}
+            price={{ min: 20.3, max: 84.2 }}
+          />
+          <Offer
+            title="2-комнатные квартиры"
+            area={{ min: 59, max: 120 }}
+            price={{ min: 20.3, max: 84.2 }}
+          />
+          <Offer
+            title="3-комнатные квартиры"
+            area={{ min: 59, max: 120 }}
+            price={{ min: 20.3, max: 84.2 }}
+          />
         </Row>
       </Grid>
     </Offers>
