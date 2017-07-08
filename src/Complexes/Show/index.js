@@ -22,7 +22,7 @@ export default () => {
     <Complex>
       <Header
         title="Жилой комплекс «Полянка/44»"
-        Address="Район Якиманка, улица Большая Полянка, дом 44 • 119180"
+        address="Район Якиманка, улица Большая Полянка, дом 44 • 119180"
       />
       <Gallery />
       <Grid>
@@ -32,14 +32,14 @@ export default () => {
           group="Группа «ПСН»"
         />
         <Specifications
-          flatcounter="1503"
-          flatstatus="Квартиры"
-          flatprice={{ min: 8.4, max: 20.2 }}
+          counter="1503"
+          status="Квартиры"
+          price={{ min: 8.4, max: 20.2 }}
         />
         <Description />
         <Infrastructure />
       </Grid>
-      <Offers offerstitle="Предложения в ЖК «Полянка/44»" />
+      <Offers title="Предложения в ЖК «Полянка/44»" />
       <Place />
       <Maps />
     </Complex>

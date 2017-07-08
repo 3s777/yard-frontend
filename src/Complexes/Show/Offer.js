@@ -62,7 +62,7 @@ export default props => {
   return (
     <Col lg={4}>
       <Offer>
-        <Title>{props.offertitle}</Title>
+        <Title>{props.title}</Title>
         <Info>
           <Label>Площадь</Label>
           <Value>от {props.area.min} до {props.area.max} м²</Value>

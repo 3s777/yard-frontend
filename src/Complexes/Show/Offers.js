@@ -25,21 +25,21 @@ export default props => {
     <Offers>
       <Grid>
         <Title>
-          {props.offerstitle}
+          {props.title}
         </Title>
         <Row>
           <Offer
-            offertitle="1-комнатные квартиры"
+            title="1-комнатные квартиры"
             area={{ min: 59, max: 120 }}
             price={{ min: 20.3, max: 84.2 }}
           />
           <Offer
-            offertitle="2-комнатные квартиры"
+            title="2-комнатные квартиры"
             area={{ min: 59, max: 120 }}
             price={{ min: 20.3, max: 84.2 }}
           />
           <Offer
-            offertitle="3-комнатные квартиры"
+            title="3-комнатные квартиры"
             area={{ min: 59, max: 120 }}
             price={{ min: 20.3, max: 84.2 }}
           />

@@ -49,31 +49,31 @@ export default props => {
         <Col lg={4}>
           <List>
             <Label>Количество квартир:</Label>
-            <Value>{props.flatcounter}</Value>
+            <Value>{props.counter}</Value>
             <Label>Статус:</Label>
-            <Value>{props.flatstatus}</Value>
+            <Value>{props.status}</Value>
             <Label>Цены:</Label>
-            <Value>от {props.flatprice.min} до {props.flatprice.max} млн</Value>
+            <Value>от {props.price.min} до {props.price.max} млн</Value>
           </List>
         </Col>
         <Col lg={4}>
           <List>
             <Label>Количество квартир:</Label>
-            <Value>{props.flatcounter}</Value>
+            <Value>{props.counter}</Value>
             <Label>Количество квартир:</Label>
-            <Value>{props.flatcounter}</Value>
+            <Value>{props.counter}</Value>
             <Label>Количество квартир:</Label>
-            <Value>{props.flatcounter}</Value>
+            <Value>{props.counter}</Value>
           </List>
         </Col>
         <Col lg={4}>
           <List>
             <Label>Количество квартир:</Label>
-            <Value>{props.flatcounter}</Value>
+            <Value>{props.counter}</Value>
             <Label>Количество квартир:</Label>
-            <Value>{props.flatcounter}</Value>
+            <Value>{props.counter}</Value>
             <Label>Количество квартир:</Label>
-            <Value>{props.flatcounter}</Value>
+            <Value>{props.counter}</Value>
           </List>
         </Col>
       </Row>
