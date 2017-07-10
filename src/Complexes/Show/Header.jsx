@@ -1,6 +1,6 @@
-import React from "react";
-import { Grid, Row, Col } from "react-flexbox-grid";
-import styled from "styled-components";
+import React from 'react';
+import { Grid } from 'react-flexbox-grid';
+import styled from 'styled-components';
 
 const Header = styled.div`
   display: flex;
@@ -43,18 +43,15 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-export default props => {
-  return (
-    <Grid>
-      <Header>
-        <div>
-          <Title>{props.title}</Title>
-          <Address>
-            {props.address}
-          </Address>
-        </div>
-        <Button>В избранное</Button>
-      </Header>
-    </Grid>
-  );
-};
+export default props =>
+  (<Grid>
+    <Header>
+      <div>
+        <Title>{props.title}</Title>
+        <Address>
+          {props.address}
+        </Address>
+      </div>
+      <Button>В избранное</Button>
+    </Header>
+  </Grid>);

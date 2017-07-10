@@ -1,6 +1,6 @@
-import React from "react";
-import { Row, Col } from "react-flexbox-grid";
-import styled from "styled-components";
+import React from 'react';
+import { Row, Col } from 'react-flexbox-grid';
+import styled from 'styled-components';
 
 const Description = styled.div`
   padding-bottom: 1.75rem;
@@ -28,21 +28,20 @@ const Paragraph = styled.p`
   }
 `;
 
-export default () => {
-  return (
-    <Description>
-      <Row>
-        <Col lg={2}>
-          <Title>Описание</Title>
-        </Col>
-        <Col lg={10}>
-          <article>
-            <Paragraph>
+export default () => (
+  <Description>
+    <Row>
+      <Col lg={2}>
+        <Title>Описание</Title>
+      </Col>
+      <Col lg={10}>
+        <article>
+          <Paragraph>
               ВТБ Арена Парк — современный квартал в 10 минутах езды от
               Кремля. Территория разделена на три зоны: жилой район,
               центральный стадион «Динамо» и большой спортивный парк.
             </Paragraph>
-            <Paragraph>
+          <Paragraph>
               Жилой район — это 13 корпусов: апартаменты, штаб-квартира
               «Динамо», отель «Hyatt Regency Moscow» и четыре современных
               бизнес-центра. На территории — рестораны, спа-комплекс,
@@ -52,7 +51,7 @@ export default () => {
               колясок и велосипедов, комнаты для домашних животных и уютные
               вестибюли с мягкими креслами для встреч с друзьями и соседями.
             </Paragraph>
-            <Paragraph>
+          <Paragraph>
               Сердце ВТБ Арена Парк — стадион. Под одной крышей
               расположились музей, торгово-развлекательный комплекс,
               подземная парковка для гостей и две крупные спортивные арены.
@@ -60,7 +59,7 @@ export default () => {
               на концерт или фестиваль, поболеть за любимую команду и купить
               новую рубашку в торговом комплексе.
             </Paragraph>
-            <Paragraph>
+          <Paragraph>
               Тихий жилой район от шумного стадиона отделяет Парк
               Физкультуры и Отдыха. Здесь каждый найдет занятие: для детей
               оборудованы игровые зоны, для подростков — спортивные площадки
@@ -68,9 +67,8 @@ export default () => {
               зоны отдыха, где можно подышать свежим воздухом во время
               рабочего перерыва.
             </Paragraph>
-          </article>
-        </Col>
-      </Row>
-    </Description>
+        </article>
+      </Col>
+    </Row>
+  </Description>
   );
-};
