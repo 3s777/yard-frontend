@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const Meta = styled.div`
   padding-top: 2.625rem;
@@ -30,12 +30,10 @@ const SubTitle = styled.small`
   color: #a9afb6;
 `;
 
-export default props => {
-  return (
-    <Meta>
-      <Title>{props.counter}<SubTitle>предложений</SubTitle></Title>
-      <Title>{props.architect}<SubTitle>архитектор</SubTitle></Title>
-      <Title>{props.group}<SubTitle>застройщик</SubTitle></Title>
-    </Meta>
+export default props => (
+  <Meta>
+    <Title>{props.counter}<SubTitle>предложений</SubTitle></Title>
+    <Title>{props.architect}<SubTitle>архитектор</SubTitle></Title>
+    <Title>{props.group}<SubTitle>застройщик</SubTitle></Title>
+  </Meta>
   );
-};

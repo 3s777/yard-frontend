@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 const Card = styled(Link)`
   display: flex;
@@ -50,15 +50,13 @@ const Description = styled.p`
   color: #3e4247;
 `;
 
-export default props => {
-  return (
-    <Card to="/complex">
-      <Photo src={props.src} srcSet={props.srcset} alt={props.alt} />
-      <Info>
-        <District>{props.district}</District>
-        <Title>{props.title}</Title>
-        <Description>{props.children}</Description>
-      </Info>
-    </Card>
+export default props => (
+  <Card to="/complex">
+    <Photo src={props.src} srcSet={props.srcset} alt={props.alt} />
+    <Info>
+      <District>{props.district}</District>
+      <Title>{props.title}</Title>
+      <Description>{props.children}</Description>
+    </Info>
+  </Card>
   );
-};
