@@ -6,7 +6,7 @@ const Card = styled(Link)`
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin-bottom: 3rem;
   text-decoration: none;
   background: #fff;
@@ -50,13 +50,16 @@ const Description = styled.p`
   color: #3e4247;
 `;
 
-export default props => (
-  <Card to="/complex">
-    <Photo src={props.src} srcSet={props.srcset} alt={props.alt} />
+export default props =>
+  (<Card to={`complexes/${props.url}`}>
+    <Photo
+      src={`https://yard-images.s3.amazonaws.com/${props.src}`}
+      srcSet={props.srcset}
+      alt={props.alt}
+    />
     <Info>
-      <District>{props.district}</District>
+      <District>{props.district}, {props.street}, {props.house}</District>
       <Title>{props.title}</Title>
       <Description>{props.children}</Description>
     </Info>
-  </Card>
-  );
+  </Card>);

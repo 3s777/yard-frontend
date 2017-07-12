@@ -33,8 +33,8 @@ const NavLink = styled(Link)`
   text-decoration: none;
 `;
 
-export default () => (
-  <Header>
+export default () =>
+  (<Header>
     <Grid>
       <HeaderWrap>
         <Logo src={logo} alt="Compass Logo" />
@@ -45,5 +45,4 @@ export default () => (
         </Nav>
       </HeaderWrap>
     </Grid>
-  </Header>
-  );
+  </Header>);

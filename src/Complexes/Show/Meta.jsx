@@ -30,10 +30,9 @@ const SubTitle = styled.small`
   color: #a9afb6;
 `;
 
-export default props => (
-  <Meta>
+export default props =>
+  (<Meta>
     <Title>{props.counter}<SubTitle>предложений</SubTitle></Title>
     <Title>{props.architect}<SubTitle>архитектор</SubTitle></Title>
     <Title>{props.group}<SubTitle>застройщик</SubTitle></Title>
-  </Meta>
-  );
+  </Meta>);

@@ -47,8 +47,8 @@ const Distance = styled.dd`
   }
 `;
 
-export default () => (
-  <ComplexMap>
+export default () =>
+  (<ComplexMap>
     <Grid>
       <Row>
         <Col lg={6}>
@@ -70,5 +70,4 @@ export default () => (
         </Col>
       </Row>
     </Grid>
-  </ComplexMap>
-  );
+  </ComplexMap>);

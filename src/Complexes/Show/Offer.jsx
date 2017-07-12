@@ -58,8 +58,8 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-export default props => (
-  <Col lg={4}>
+export default props =>
+  (<Col lg={4}>
     <Offer>
       <Title>{props.title}</Title>
       <Info>
@@ -71,8 +71,7 @@ export default props => (
         <Value>от {props.price.min} до {props.price.max} млн.руб</Value>
       </Info>
       <Button>
-          Посмотреть предложения
-        </Button>
+        Посмотреть предложения
+      </Button>
     </Offer>
-  </Col>
-  );
+  </Col>);

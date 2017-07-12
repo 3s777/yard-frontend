@@ -20,8 +20,8 @@ const Title = styled.h2`
   text-align: center;
 `;
 
-export default props => (
-  <Offers>
+export default props =>
+  (<Offers>
     <Grid>
       <Title>
         {props.title}
@@ -44,5 +44,4 @@ export default props => (
         />
       </Row>
     </Grid>
-  </Offers>
-  );
+  </Offers>);
