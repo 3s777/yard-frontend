@@ -53,8 +53,8 @@ const Description = styled.p`
 export default props =>
   (<Card to={`complexes/${props.url}`}>
     <Photo
-      src={`https://yard-images.s3.amazonaws.com/${props.src}`}
-      srcSet={props.srcset}
+      src={`https://yard-images.s3.amazonaws.com/${props.src}-512`}
+      srcSet={`https://yard-images.s3.amazonaws.com/${props.srcset2}-1024 2x, https://yard-images.s3.amazonaws.com/${props.srcset3}-2048 3x `}
       alt={props.alt}
     />
     <Info>
