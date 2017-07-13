@@ -49,7 +49,7 @@ export default props =>
       <div>
         <Title>{props.title}</Title>
         <Address>
-          {props.address}
+          {props.district}, {props.street}, {props.house}
         </Address>
       </div>
       <Button>В избранное</Button>

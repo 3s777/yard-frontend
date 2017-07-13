@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React from 'react';
 import { Grid } from 'react-flexbox-grid';
 import styled from 'styled-components';
@@ -21,7 +20,7 @@ class Cards extends React.Component {
   componentDidMount() {
     fetch('https://yard.moscow/api/v1/complexes?filter%5Bstate%5D=public')
       .then(response => response.json())
-      .then(json => {
+      .then((json) => {
         console.log(json);
         this.setState({ data: json.items });
       });
@@ -31,7 +30,7 @@ class Cards extends React.Component {
     return (
       <Grid>
         {this.state.data.map(complex =>
-          <Card
+          (<Card
             key={complex.id}
             url={complex.slug}
             src={complex.images[0].id}
@@ -49,7 +48,7 @@ class Cards extends React.Component {
             the 32,000-square-foot building will stand as a profound
             architectural statement and embrace the industrial character of the
             neighborhood.
-          </Card>,
+          </Card>),
         )}
       </Grid>
     );
@@ -57,10 +56,10 @@ class Cards extends React.Component {
 }
 
 export default () =>
-  <div>
+  (<div>
     <Banner />
     <DevelopmentSection />
     <Content>
       <Cards />
     </Content>
-  </div>;
+  </div>);

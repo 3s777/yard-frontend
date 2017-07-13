@@ -25,40 +25,27 @@ const CounterButton = styled.button`
   border-radius: 0.125rem;
 `;
 
-export default () =>
-  (<div>
-    <Gallery>
-      <img
-        src={`${process.env.PUBLIC_URL}/photo1.jpg`}
-        srcSet="/photo1@2x.jpg 2x, /photo1@3x.jpg 3x"
-        alt="Complex 1"
-      />
-      <img
-        src={`${process.env.PUBLIC_URL}/photo2.jpg`}
-        srcSet="/photo2@2x.jpg 2x, /photo2@3x.jpg 3x"
-        alt="Complex 2"
-      />
-      <img
-        src={`${process.env.PUBLIC_URL}/photo3.jpg`}
-        srcSet="/photo3@2x.jpg 2x, /photo3@3x.jpg 3x"
-        alt="Complex 3"
-      />
-      <img
-        src={`${process.env.PUBLIC_URL}/photo4.jpg`}
-        srcSet="/photo4@2x.jpg 2x, /photo4@3x.jpg 3x"
-        alt="Complex 4"
-      />
-      <img
-        src={`${process.env.PUBLIC_URL}/photo5.jpg`}
-        srcSet="/photo5@2x.jpg 2x, /photo5@3x.jpg 3x"
-        alt="Complex 5"
-      />
-    </Gallery>
-    <Counter>
-      <Grid>
-        <CounterButton>
-          41 фотография
-        </CounterButton>
-      </Grid>
-    </Counter>
-  </div>);
+export default function (props) {
+  const images = props.images || [];
+  console.log('Ошибка', props);
+  return (
+    <div>
+      <Gallery>
+        {images.map(image =>
+          (<img
+            key={image.id}
+            src={`https://yard-images.s3.amazonaws.com/${image.id}-512`}
+            alt="Gallery"
+          />),
+        )}
+      </Gallery>
+      <Counter>
+        <Grid>
+          <CounterButton>
+            41 фотография
+          </CounterButton>
+        </Grid>
+      </Counter>
+    </div>
+  );
+}
