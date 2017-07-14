@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const Gallery = styled.div`
   display: flex;
-  overflow-y: scroll;
+  overflow-x: scroll;
 `;
 
 const Image = styled.img`
@@ -13,6 +13,8 @@ const Image = styled.img`
 
 const Counter = styled.div`
   margin-top: -2.625rem;
+  position: relative;
+  z-index: 10;
 `;
 
 const CounterButton = styled.button`

@@ -40,6 +40,7 @@ class ComplexData extends React.Component {
     const details = this.state.complex.details || {};
     const statistics = this.state.complex.statistics || {};
     const images = this.state.complex.images || [];
+    const amenities = this.state.complex.amenities || [];
     const { street, house, subLocalityName } = location || {};
     const { resalePropertiesCount, propertiesCount } = statistics;
     const {
@@ -116,8 +117,10 @@ class ComplexData extends React.Component {
             maintenanceCosts={maintenanceCosts}
             totalArea={{ min: isUndef(tAreaFrom), max: isUndef(tAreaTo) }}
           />
-          <Description />
-          <Infrastructure />
+          {this.state.complex.fullDescription
+            ? <Description fullDescription={this.state.complex.fullDescription} />
+            : null}
+          {amenities.length > 0 ? <Infrastructure amenities={amenities} /> : null}
         </Grid>
         <Offers title={this.state.complex.name} />
         <Place />

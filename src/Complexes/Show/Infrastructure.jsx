@@ -28,30 +28,20 @@ const InfrastructureItem = styled.div`
   }
 `;
 
-export default () =>
-  (<Infrastructure>
-    <Title>Инфраструктура</Title>
-    <Row>
-      <Col lg={2}>
-        <InfrastructureItem>Бассейн</InfrastructureItem>
-        <InfrastructureItem>Частная школа</InfrastructureItem>
-      </Col>
-      <Col lg={2}>
-        <InfrastructureItem>Детский сад</InfrastructureItem>
-        <InfrastructureItem>Частная школа</InfrastructureItem>
-      </Col>
-      <Col lg={2}>
-        <InfrastructureItem>Частная школа</InfrastructureItem>
-        <InfrastructureItem>Частная школа</InfrastructureItem>
-      </Col>
-      <Col lg={2}>
-        <InfrastructureItem>Бассейн</InfrastructureItem>
-      </Col>
-      <Col lg={2}>
-        <InfrastructureItem>Детский сад</InfrastructureItem>
-      </Col>
-      <Col lg={2}>
-        <InfrastructureItem>Частная школа</InfrastructureItem>
-      </Col>
-    </Row>
-  </Infrastructure>);
+export default function (props) {
+  const amenities = props.amenities || [];
+  return (
+    <Infrastructure>
+      <Title>Инфраструктура</Title>
+      <Row>
+        {amenities.map(amenity =>
+          (<Col lg={2}>
+            <InfrastructureItem>
+              {amenity}
+            </InfrastructureItem>
+          </Col>),
+        )}
+      </Row>
+    </Infrastructure>
+  );
+}
