@@ -33,6 +33,7 @@ const Button = styled.button`
   padding-right: 1rem;
   border: 0.0625rem solid #e0e0e1;
   box-sizing: border-box;
+  font-family: 'Fira Sans', sans-serif;
   font-size: 0.625rem;
   font-weight: 300;
   line-height: 1;

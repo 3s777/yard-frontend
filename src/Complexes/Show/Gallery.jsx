@@ -23,6 +23,7 @@ const CounterButton = styled.button`
   padding-left: 1rem;
   padding-right: 1rem;
   border: 0;
+  font-family: 'Fira Sans', sans-serif;
   font-size: 0.625rem;
   font-weight: 300;
   line-height: 1;
