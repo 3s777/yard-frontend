@@ -47,32 +47,38 @@ export default props =>
     <Row>
       <Col lg={4}>
         <List>
-          <Label>Количество квартир:</Label>
+          <Label>Количество квартир</Label>
           <Value>{props.counter}</Value>
-          <Label>Статус:</Label>
+          <Label>Статус</Label>
           <Value>{props.status}</Value>
-          <Label>Цены:</Label>
+          <Label>Цены</Label>
           <Value>от {props.price.min} до {props.price.max} млн</Value>
+          <Label>Безопасность</Label>
+          <Value>{props.guard}</Value>
         </List>
       </Col>
       <Col lg={4}>
         <List>
-          <Label>Количество квартир:</Label>
-          <Value>{props.counter}</Value>
-          <Label>Количество квартир:</Label>
-          <Value>{props.counter}</Value>
-          <Label>Количество квартир:</Label>
-          <Value>{props.counter}</Value>
+          <Label>Конструкция корпусов</Label>
+          <Value>{props.construction}</Value>
+          <Label>Площадь</Label>
+          <Value>от {props.totalArea.min} до {props.totalArea.max} м²</Value>
+          <Label>Высота потолков</Label>
+          <Value>{props.ceilheight.min} - {props.ceilheight.max} м</Value>
+          <Label>Обслуживание</Label>
+          <Value>{props.maintenanceCosts} руб / м² / месяц</Value>
         </List>
       </Col>
       <Col lg={4}>
         <List>
-          <Label>Количество квартир:</Label>
-          <Value>{props.counter}</Value>
-          <Label>Количество квартир:</Label>
-          <Value>{props.counter}</Value>
-          <Label>Количество квартир:</Label>
-          <Value>{props.counter}</Value>
+          <Label>Начало строительства</Label>
+          <Value>{props.startQuarter} квартал {props.startYear} года</Value>
+          <Label>Конец строительства</Label>
+          <Value>{props.commissioningQuarter} квартал {props.commissioningYear} года</Value>
+          <Label>Наземная парковка</Label>
+          <Value>{props.parkings}</Value>
+          <Label>Подземная парковка</Label>
+          <Value>{props.undergroundGarages}</Value>
         </List>
       </Col>
     </Row>

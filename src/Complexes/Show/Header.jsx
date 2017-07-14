@@ -47,9 +47,9 @@ export default props =>
   (<Grid>
     <Header>
       <div>
-        <Title>{props.title}</Title>
+        <Title>Жилой комплекс «{props.title}»</Title>
         <Address>
-          {props.district}, {props.street}, {props.house}
+          Район {props.district}, {props.street}, дом {props.house}
         </Address>
       </div>
       <Button>В избранное</Button>

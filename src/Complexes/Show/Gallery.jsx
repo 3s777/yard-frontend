@@ -4,6 +4,11 @@ import styled from 'styled-components';
 
 const Gallery = styled.div`
   display: flex;
+  overflow-y: scroll;
+`;
+
+const Image = styled.img`
+  height: 400px;
 `;
 
 const Counter = styled.div`
@@ -27,12 +32,11 @@ const CounterButton = styled.button`
 
 export default function (props) {
   const images = props.images || [];
-  console.log('Ошибка', props);
   return (
     <div>
       <Gallery>
         {images.map(image =>
-          (<img
+          (<Image
             key={image.id}
             src={`https://yard-images.s3.amazonaws.com/${image.id}-512`}
             alt="Gallery"
@@ -42,7 +46,7 @@ export default function (props) {
       <Counter>
         <Grid>
           <CounterButton>
-            41 фотография
+            {images.length} фотография
           </CounterButton>
         </Grid>
       </Counter>

@@ -21,7 +21,6 @@ class Cards extends React.Component {
     fetch('https://yard.moscow/api/v1/complexes?filter%5Bstate%5D=public')
       .then(response => response.json())
       .then((json) => {
-        console.log(json);
         this.setState({ data: json.items });
       });
   }

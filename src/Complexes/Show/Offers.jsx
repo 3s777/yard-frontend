@@ -24,7 +24,7 @@ export default props =>
   (<Offers>
     <Grid>
       <Title>
-        {props.title}
+        Предложения в ЖК «{props.title}»
       </Title>
       <Row>
         <Offer

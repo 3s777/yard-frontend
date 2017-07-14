@@ -37,7 +37,7 @@ export default () =>
   (<Header>
     <Grid>
       <HeaderWrap>
-        <Logo src={logo} alt="Compass Logo" />
+        <Link to="/"><Logo src={logo} alt="Compass Logo" /></Link>
         <Nav>
           <NavLink to="/">Купить</NavLink>
           <NavLink to="/">Снять</NavLink>
