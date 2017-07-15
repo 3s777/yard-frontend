@@ -33,5 +33,4 @@ const SubTitle = styled.small`
 export default props =>
   (<Meta>
     <Title>{props.architect}<SubTitle>архитектор</SubTitle></Title>
-    <Title>{props.group}<SubTitle>застройщик</SubTitle></Title>
   </Meta>);

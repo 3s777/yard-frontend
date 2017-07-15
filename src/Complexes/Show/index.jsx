@@ -10,7 +10,7 @@ import Infrastructure from './Infrastructure';
 import Offers from './Offers';
 import Place from './Place';
 import Maps from './Maps';
-import { kinds, securityKinds, constructionKinds, quarters } from '../../Translation';
+import { getApi } from '../../getApi';
 
 const Complex = styled.main`
   padding-top: 1.5rem;
@@ -27,96 +27,26 @@ class ComplexData extends React.Component {
   }
 
   componentDidMount() {
-    const complexId = this.props.match.params.id;
-    fetch(`https://yard.moscow/api/v1/complexes/${complexId}`)
-      .then(response => response.json())
-      .then((json) => {
-        this.setState({ complex: json });
-      });
+    const complexSlug = this.props.match.params.slug;
+    getApi(`/complexes/${complexSlug}`).then((json) => {
+      this.setState({ complex: json });
+    });
   }
 
   render() {
     const location = this.state.complex.location || {};
-    const details = this.state.complex.details || {};
-    const statistics = this.state.complex.statistics || {};
     const images = this.state.complex.images || [];
     const amenities = this.state.complex.amenities || [];
-    const { street, house, subLocalityName } = location || {};
-    const { resalePropertiesCount, propertiesCount } = statistics;
-    const {
-      propertyKind,
-      security,
-      constructionKind,
-      maintenanceCosts,
-      startYear,
-      startQuarter,
-      commissioningYear,
-      commissioningQuarter,
-      parkings,
-      undergroundGarages,
-      architect,
-    } =
-      details || {};
-    const cHeight = details.ceilHeight || {};
-    const cHeightFrom = cHeight.from;
-    const cHeightTo = cHeight.to;
-    const tArea = statistics.totalArea || {};
-    const tAreaFrom = tArea.from;
-    const tAreaTo = tArea.to;
-    const complexPrice = statistics.price || {};
-    const priceFrom = complexPrice.from || {};
-    const priceTo = complexPrice.to || {};
-    const priceFromRub = priceFrom.rub / 1000000;
-    const priceToRub = priceTo.rub / 1000000;
-
-    function statusCheck(statusData) {
-      if (statusData) {
-        return kinds[propertyKind];
-      }
-      return 'Квартира';
-    }
-
-    function parkingCheck(parkingData) {
-      if (parkingData) {
-        return `${parkingData} м/м`;
-      }
-      return 'Нет';
-    }
-
-    function isUndef(dataToFixed) {
-      if (dataToFixed) {
-        return dataToFixed.toFixed(2);
-      }
-      return null;
-    }
+    const { resalePropertiesCount } = this.state.complex.statistics || {};
+    const { architect } = this.state.complex.details || {};
 
     return (
       <Complex>
-        <Header
-          title={this.state.complex.name}
-          district={subLocalityName}
-          street={street}
-          house={house}
-        />
-        <Gallery images={images} />
+        <Header title={this.state.complex.name} location={location} />
+        <Gallery images={images} alt={this.state.complex.name} />
         <Grid>
-          <Meta counter={resalePropertiesCount} architect={architect} group="Группа «ПСН»" />
-          <Specifications
-            counter={propertiesCount}
-            status={statusCheck(propertyKind)}
-            price={{ min: isUndef(priceFromRub), max: isUndef(priceToRub) }}
-            guard={securityKinds[security]}
-            construction={constructionKinds[constructionKind]}
-            ceilheight={{ min: isUndef(cHeightFrom), max: isUndef(cHeightTo) }}
-            startQuarter={quarters[startQuarter]}
-            startYear={startYear}
-            commissioningQuarter={quarters[commissioningQuarter]}
-            commissioningYear={commissioningYear}
-            parkings={parkingCheck(parkings)}
-            undergroundGarages={parkingCheck(undergroundGarages)}
-            maintenanceCosts={maintenanceCosts}
-            totalArea={{ min: isUndef(tAreaFrom), max: isUndef(tAreaTo) }}
-          />
+          <Meta counter={resalePropertiesCount} architect={architect} />
+          <Specifications complex={this.state.complex} />
           {this.state.complex.fullDescription
             ? <Description fullDescription={this.state.complex.fullDescription} />
             : null}

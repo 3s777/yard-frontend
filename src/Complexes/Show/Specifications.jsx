@@ -1,6 +1,8 @@
 import React from 'react';
 import { Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
+import { statusCheck, parkingCheck, isUndef } from './functions';
+import { securityKinds, constructionKinds, quarters } from '../../Translation';
 
 const Specifications = styled.div`
   padding-top: 2rem;
@@ -41,45 +43,78 @@ const Value = styled.dd`
   color: #3e4247;
 `;
 
-export default props =>
-  (<Specifications>
-    <Title>Характеристики</Title>
-    <Row>
-      <Col lg={4}>
-        <List>
-          <Label>Количество квартир</Label>
-          <Value>{props.counter}</Value>
-          <Label>Статус</Label>
-          <Value>{props.status}</Value>
-          <Label>Цены</Label>
-          <Value>от {props.price.min} до {props.price.max} млн</Value>
-          <Label>Безопасность</Label>
-          <Value>{props.guard}</Value>
-        </List>
-      </Col>
-      <Col lg={4}>
-        <List>
-          <Label>Конструкция корпусов</Label>
-          <Value>{props.construction}</Value>
-          <Label>Площадь</Label>
-          <Value>от {props.totalArea.min} до {props.totalArea.max} м²</Value>
-          <Label>Высота потолков</Label>
-          <Value>{props.ceilheight.min} - {props.ceilheight.max} м</Value>
-          <Label>Обслуживание</Label>
-          <Value>{props.maintenanceCosts} руб / м² / месяц</Value>
-        </List>
-      </Col>
-      <Col lg={4}>
-        <List>
-          <Label>Начало строительства</Label>
-          <Value>{props.startQuarter} квартал {props.startYear} года</Value>
-          <Label>Конец строительства</Label>
-          <Value>{props.commissioningQuarter} квартал {props.commissioningYear} года</Value>
-          <Label>Наземная парковка</Label>
-          <Value>{props.parkings}</Value>
-          <Label>Подземная парковка</Label>
-          <Value>{props.undergroundGarages}</Value>
-        </List>
-      </Col>
-    </Row>
-  </Specifications>);
+export default function (props) {
+  const {
+    details: {
+      propertyKind,
+      security,
+      constructionKind,
+      maintenanceCosts,
+      startYear,
+      startQuarter,
+      commissioningYear,
+      commissioningQuarter,
+      parkings,
+      undergroundGarages,
+      ceilHeight,
+    } = {},
+    statistics: { price, totalArea, propertiesCount } = {},
+  } =
+    props.complex || {};
+
+  const cHeight = ceilHeight || {};
+  const cHeightFrom = cHeight.from;
+  const cHeightTo = cHeight.to;
+  const tArea = totalArea || {};
+  const tAreaFrom = tArea.from;
+  const tAreaTo = tArea.to;
+  const complexPrice = price || {};
+  const priceFrom = complexPrice.from || {};
+  const priceTo = complexPrice.to || {};
+  const priceFromRub = priceFrom.rub / 1000000;
+  const priceToRub = priceTo.rub / 1000000;
+
+  return (
+    <Specifications>
+      <Title>Характеристики</Title>
+      <Row>
+        <Col lg={4}>
+          <List>
+            <Label>Количество квартир</Label>
+            <Value>{propertiesCount}</Value>
+            <Label>Статус</Label>
+            <Value>{statusCheck(propertyKind)}</Value>
+            <Label>Цены</Label>
+            <Value>от {isUndef(priceFromRub)} до {isUndef(priceToRub)} млн</Value>
+            <Label>Безопасность</Label>
+            <Value>{securityKinds[security]}</Value>
+          </List>
+        </Col>
+        <Col lg={4}>
+          <List>
+            <Label>Конструкция корпусов</Label>
+            <Value>{constructionKinds[constructionKind]}</Value>
+            <Label>Площадь</Label>
+            <Value>от {isUndef(tAreaFrom)} до {isUndef(tAreaTo)} м²</Value>
+            <Label>Высота потолков</Label>
+            <Value>{isUndef(cHeightFrom)} - {isUndef(cHeightTo)} м</Value>
+            <Label>Обслуживание</Label>
+            <Value>{maintenanceCosts} руб / м² / месяц</Value>
+          </List>
+        </Col>
+        <Col lg={4}>
+          <List>
+            <Label>Начало строительства</Label>
+            <Value>{quarters[startQuarter]} квартал {startYear} года</Value>
+            <Label>Конец строительства</Label>
+            <Value>{quarters[commissioningQuarter]} квартал {commissioningYear} года</Value>
+            <Label>Наземная парковка</Label>
+            <Value>{parkingCheck(parkings)}</Value>
+            <Label>Подземная парковка</Label>
+            <Value>{parkingCheck(undergroundGarages)}</Value>
+          </List>
+        </Col>
+      </Row>
+    </Specifications>
+  );
+}

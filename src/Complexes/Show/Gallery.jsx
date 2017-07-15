@@ -1,6 +1,7 @@
 import React from 'react';
 import { Grid } from 'react-flexbox-grid';
 import styled from 'styled-components';
+import { imagesUrl } from '../../getApi';
 
 const Gallery = styled.div`
   display: flex;
@@ -41,8 +42,9 @@ export default function (props) {
         {images.map(image =>
           (<Image
             key={image.id}
-            src={`https://yard-images.s3.amazonaws.com/${image.id}-512`}
-            alt="Gallery"
+            src={`${imagesUrl + image.id}-512`}
+            srcSet={`${imagesUrl + image.id}-1024 2x, ${imagesUrl + image.id}-2048 3x `}
+            alt={props.alt}
           />),
         )}
       </Gallery>

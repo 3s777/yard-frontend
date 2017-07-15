@@ -44,15 +44,21 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-export default props =>
-  (<Grid>
-    <Header>
-      <div>
-        <Title>Жилой комплекс «{props.title}»</Title>
-        <Address>
-          Район {props.district}, {props.street}, дом {props.house}
-        </Address>
-      </div>
-      <Button>В избранное</Button>
-    </Header>
-  </Grid>);
+export default function (props) {
+  return (
+    <Grid>
+      <Header>
+        <div>
+          <Title>Жилой комплекс «{props.title}»</Title>
+          <Address>
+            Район {props.location.subLocalityName}, {props.location.street}, дом{' '}
+            {props.location.house} •
+            {' '}
+            {props.location.postalCode}
+          </Address>
+        </div>
+        <Button>В избранное</Button>
+      </Header>
+    </Grid>
+  );
+}
