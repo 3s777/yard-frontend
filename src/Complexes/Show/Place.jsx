@@ -40,8 +40,8 @@ const Photo = styled.img`
   height: 35rem;
 `;
 
-export default () => (
-  <Place>
+export default () =>
+  (<Place>
     <Grid>
       <Row>
         <Col lg={6}>
@@ -58,5 +58,4 @@ export default () => (
         </Col>
       </Row>
     </Grid>
-  </Place>
-  );
+  </Place>);

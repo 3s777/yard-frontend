@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { imagesUrl } from '../functions';
 
 const Card = styled(Link)`
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin-bottom: 3rem;
   text-decoration: none;
   background: #fff;
@@ -26,6 +27,7 @@ const Info = styled.div`
   padding-bottom: 1.5rem;
   padding-left: 2rem;
   padding-right: 5.375rem;
+  flex: 0 0 50%;
   border-bottom: 0.125rem solid #646971;
 `;
 
@@ -50,13 +52,23 @@ const Description = styled.p`
   color: #3e4247;
 `;
 
-export default props => (
-  <Card to="/complex">
-    <Photo src={props.src} srcSet={props.srcset} alt={props.alt} />
-    <Info>
-      <District>{props.district}</District>
-      <Title>{props.title}</Title>
-      <Description>{props.children}</Description>
-    </Info>
-  </Card>
+export default function (props) {
+  return (
+    <Card to={`complexes/${props.complex.slug}`}>
+      <Photo
+        src={`${imagesUrl + props.complex.images[0].id}-512`}
+        srcSet={`${imagesUrl + props.complex.images[0].id}-1024 2x, ${imagesUrl +
+          props.complex.images[0].id}-2048 3x `}
+        alt={props.complex.name}
+      />
+      <Info>
+        <District>
+          {props.complex.location.subLocalityName}, {props.complex.location.street},{' '}
+          {props.complex.location.house}
+        </District>
+        <Title>{props.complex.name}</Title>
+        <Description>{props.children}</Description>
+      </Info>
+    </Card>
   );
+}

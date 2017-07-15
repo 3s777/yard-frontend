@@ -1,13 +1,22 @@
 import React from 'react';
 import { Grid } from 'react-flexbox-grid';
 import styled from 'styled-components';
+import pluralize from 'pluralize-ru';
+import { imagesUrl } from '../functions';
 
 const Gallery = styled.div`
   display: flex;
+  overflow-x: scroll;
+`;
+
+const Image = styled.img`
+  height: 400px;
 `;
 
 const Counter = styled.div`
   margin-top: -2.625rem;
+  position: relative;
+  z-index: 10;
 `;
 
 const CounterButton = styled.button`
@@ -16,6 +25,7 @@ const CounterButton = styled.button`
   padding-left: 1rem;
   padding-right: 1rem;
   border: 0;
+  font-family: 'Fira Sans', sans-serif;
   font-size: 0.625rem;
   font-weight: 300;
   line-height: 1;
@@ -25,40 +35,34 @@ const CounterButton = styled.button`
   border-radius: 0.125rem;
 `;
 
-export default () =>
-  (<div>
-    <Gallery>
-      <img
-        src={`${process.env.PUBLIC_URL}/photo1.jpg`}
-        srcSet="/photo1@2x.jpg 2x, /photo1@3x.jpg 3x"
-        alt="Complex 1"
-      />
-      <img
-        src={`${process.env.PUBLIC_URL}/photo2.jpg`}
-        srcSet="/photo2@2x.jpg 2x, /photo2@3x.jpg 3x"
-        alt="Complex 2"
-      />
-      <img
-        src={`${process.env.PUBLIC_URL}/photo3.jpg`}
-        srcSet="/photo3@2x.jpg 2x, /photo3@3x.jpg 3x"
-        alt="Complex 3"
-      />
-      <img
-        src={`${process.env.PUBLIC_URL}/photo4.jpg`}
-        srcSet="/photo4@2x.jpg 2x, /photo4@3x.jpg 3x"
-        alt="Complex 4"
-      />
-      <img
-        src={`${process.env.PUBLIC_URL}/photo5.jpg`}
-        srcSet="/photo5@2x.jpg 2x, /photo5@3x.jpg 3x"
-        alt="Complex 5"
-      />
-    </Gallery>
-    <Counter>
-      <Grid>
-        <CounterButton>
-          41 фотография
-        </CounterButton>
-      </Grid>
-    </Counter>
-  </div>);
+export default function (props) {
+  const images = props.images || [];
+  const photoPluralize = pluralize(
+    images.length,
+    'фотографий',
+    'фотография',
+    'фотографии',
+    'фотографий',
+  );
+  return (
+    <div>
+      <Gallery>
+        {images.map(image =>
+          (<Image
+            key={image.id}
+            src={`${imagesUrl + image.id}-512`}
+            srcSet={`${imagesUrl + image.id}-1024 2x, ${imagesUrl + image.id}-2048 3x `}
+            alt={props.alt}
+          />),
+        )}
+      </Gallery>
+      <Counter>
+        <Grid>
+          <CounterButton>
+            {images.length} {photoPluralize}
+          </CounterButton>
+        </Grid>
+      </Counter>
+    </div>
+  );
+}

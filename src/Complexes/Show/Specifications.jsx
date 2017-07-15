@@ -1,6 +1,8 @@
 import React from 'react';
 import { Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
+import { statusCheck, parkingCheck, formatToFixed } from '../functions';
+import { securityKinds, constructionKinds, quarters } from '../../Translation';
 
 const Specifications = styled.div`
   padding-top: 2rem;
@@ -41,39 +43,78 @@ const Value = styled.dd`
   color: #3e4247;
 `;
 
-export default props =>
-  (<Specifications>
-    <Title>Характеристики</Title>
-    <Row>
-      <Col lg={4}>
-        <List>
-          <Label>Количество квартир:</Label>
-          <Value>{props.counter}</Value>
-          <Label>Статус:</Label>
-          <Value>{props.status}</Value>
-          <Label>Цены:</Label>
-          <Value>от {props.price.min} до {props.price.max} млн</Value>
-        </List>
-      </Col>
-      <Col lg={4}>
-        <List>
-          <Label>Количество квартир:</Label>
-          <Value>{props.counter}</Value>
-          <Label>Количество квартир:</Label>
-          <Value>{props.counter}</Value>
-          <Label>Количество квартир:</Label>
-          <Value>{props.counter}</Value>
-        </List>
-      </Col>
-      <Col lg={4}>
-        <List>
-          <Label>Количество квартир:</Label>
-          <Value>{props.counter}</Value>
-          <Label>Количество квартир:</Label>
-          <Value>{props.counter}</Value>
-          <Label>Количество квартир:</Label>
-          <Value>{props.counter}</Value>
-        </List>
-      </Col>
-    </Row>
-  </Specifications>);
+export default function (props) {
+  const {
+    details: {
+      propertyKind,
+      security,
+      constructionKind,
+      maintenanceCosts,
+      startYear,
+      startQuarter,
+      commissioningYear,
+      commissioningQuarter,
+      parkings,
+      undergroundGarages,
+      ceilHeight,
+    } = {},
+    statistics: { price, totalArea, propertiesCount } = {},
+  } =
+    props.complex || {};
+
+  const cHeight = ceilHeight || {};
+  const cHeightFrom = cHeight.from;
+  const cHeightTo = cHeight.to;
+  const tArea = totalArea || {};
+  const tAreaFrom = tArea.from;
+  const tAreaTo = tArea.to;
+  const complexPrice = price || {};
+  const priceFrom = complexPrice.from || {};
+  const priceTo = complexPrice.to || {};
+  const priceFromRub = priceFrom.rub / 1000000;
+  const priceToRub = priceTo.rub / 1000000;
+
+  return (
+    <Specifications>
+      <Title>Характеристики</Title>
+      <Row>
+        <Col lg={4}>
+          <List>
+            <Label>Количество квартир</Label>
+            <Value>{propertiesCount}</Value>
+            {propertyKind && <Label>Статус</Label>}
+            {propertyKind && <Value>{statusCheck(propertyKind)}</Value>}
+            <Label>Цены</Label>
+            <Value>от {formatToFixed(priceFromRub)} до {formatToFixed(priceToRub)} млн</Value>
+            <Label>Безопасность</Label>
+            <Value>{securityKinds[security]}</Value>
+          </List>
+        </Col>
+        <Col lg={4}>
+          <List>
+            <Label>Конструкция корпусов</Label>
+            <Value>{constructionKinds[constructionKind]}</Value>
+            <Label>Площадь</Label>
+            <Value>от {formatToFixed(tAreaFrom)} до {formatToFixed(tAreaTo)} м²</Value>
+            <Label>Высота потолков</Label>
+            <Value>{formatToFixed(cHeightFrom)} - {formatToFixed(cHeightTo)} м</Value>
+            <Label>Обслуживание</Label>
+            <Value>{maintenanceCosts} руб / м² / месяц</Value>
+          </List>
+        </Col>
+        <Col lg={4}>
+          <List>
+            <Label>Начало строительства</Label>
+            <Value>{quarters[startQuarter]} квартал {startYear} года</Value>
+            <Label>Конец строительства</Label>
+            <Value>{quarters[commissioningQuarter]} квартал {commissioningYear} года</Value>
+            <Label>Наземная парковка</Label>
+            <Value>{parkingCheck(parkings)}</Value>
+            <Label>Подземная парковка</Label>
+            <Value>{parkingCheck(undergroundGarages)}</Value>
+          </List>
+        </Col>
+      </Row>
+    </Specifications>
+  );
+}

@@ -33,6 +33,7 @@ const Button = styled.button`
   padding-right: 1rem;
   border: 0.0625rem solid #e0e0e1;
   box-sizing: border-box;
+  font-family: 'Fira Sans', sans-serif;
   font-size: 0.625rem;
   font-weight: 300;
   line-height: 1;
@@ -43,15 +44,21 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-export default props =>
-  (<Grid>
-    <Header>
-      <div>
-        <Title>{props.title}</Title>
-        <Address>
-          {props.address}
-        </Address>
-      </div>
-      <Button>В избранное</Button>
-    </Header>
-  </Grid>);
+export default function (props) {
+  return (
+    <Grid>
+      <Header>
+        <div>
+          <Title>Жилой комплекс «{props.title}»</Title>
+          <Address>
+            Район {props.location.subLocalityName}, {props.location.street}, дом{' '}
+            {props.location.house} •
+            {' '}
+            {props.location.postalCode}
+          </Address>
+        </div>
+        <Button>В избранное</Button>
+      </Header>
+    </Grid>
+  );
+}

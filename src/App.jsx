@@ -12,7 +12,7 @@ export default () =>
     <div>
       <Header />
       <Route exact path="/" component={Complexes} />
-      <Route path="/complex" component={Complex} />
+      <Route path="/complexes/:slug" component={Complex} />
       <Footer />
     </div>
   </Router>);
