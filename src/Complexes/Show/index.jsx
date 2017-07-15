@@ -47,10 +47,9 @@ class ComplexData extends React.Component {
         <Grid>
           <Meta counter={resalePropertiesCount} architect={architect} />
           <Specifications complex={this.state.complex} />
-          {this.state.complex.fullDescription
-            ? <Description fullDescription={this.state.complex.fullDescription} />
-            : null}
-          {amenities.length > 0 ? <Infrastructure amenities={amenities} /> : null}
+          {this.state.complex.fullDescription &&
+            <Description fullDescription={this.state.complex.fullDescription} />}
+          {amenities.length > 0 && <Infrastructure amenities={amenities} />}
         </Grid>
         <Offers title={this.state.complex.name} />
         <Place />

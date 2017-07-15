@@ -82,8 +82,8 @@ export default function (props) {
           <List>
             <Label>Количество квартир</Label>
             <Value>{propertiesCount}</Value>
-            {propertyKind ? <Label>Статус</Label> : null}
-            {propertyKind ? <Value>{statusCheck(propertyKind)}</Value> : null}
+            {propertyKind && <Label>Статус</Label>}
+            {propertyKind && <Value>{statusCheck(propertyKind)}</Value>}
             <Label>Цены</Label>
             <Value>от {formatToFixed(priceFromRub)} до {formatToFixed(priceToRub)} млн</Value>
             <Label>Безопасность</Label>
