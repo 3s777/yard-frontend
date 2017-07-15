@@ -59,7 +59,7 @@ export default function (props) {
       <Counter>
         <Grid>
           <CounterButton>
-            {`${images.length} ${photoPluralize}`}
+            {images.length} {photoPluralize}
           </CounterButton>
         </Grid>
       </Counter>

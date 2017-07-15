@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
-import { statusCheck, parkingCheck, isUndef } from '../functions';
+import { statusCheck, parkingCheck, formatToFixed } from '../functions';
 import { securityKinds, constructionKinds, quarters } from '../../Translation';
 
 const Specifications = styled.div`
@@ -82,10 +82,10 @@ export default function (props) {
           <List>
             <Label>Количество квартир</Label>
             <Value>{propertiesCount}</Value>
-            <Label>Статус</Label>
-            <Value>{statusCheck(propertyKind)}</Value>
+            {propertyKind ? <Label>Статус</Label> : null}
+            {propertyKind ? <Value>{statusCheck(propertyKind)}</Value> : null}
             <Label>Цены</Label>
-            <Value>от {isUndef(priceFromRub)} до {isUndef(priceToRub)} млн</Value>
+            <Value>от {formatToFixed(priceFromRub)} до {formatToFixed(priceToRub)} млн</Value>
             <Label>Безопасность</Label>
             <Value>{securityKinds[security]}</Value>
           </List>
@@ -95,9 +95,9 @@ export default function (props) {
             <Label>Конструкция корпусов</Label>
             <Value>{constructionKinds[constructionKind]}</Value>
             <Label>Площадь</Label>
-            <Value>от {isUndef(tAreaFrom)} до {isUndef(tAreaTo)} м²</Value>
+            <Value>от {formatToFixed(tAreaFrom)} до {formatToFixed(tAreaTo)} м²</Value>
             <Label>Высота потолков</Label>
-            <Value>{isUndef(cHeightFrom)} - {isUndef(cHeightTo)} м</Value>
+            <Value>{formatToFixed(cHeightFrom)} - {formatToFixed(cHeightTo)} м</Value>
             <Label>Обслуживание</Label>
             <Value>{maintenanceCosts} руб / м² / месяц</Value>
           </List>

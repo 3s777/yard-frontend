@@ -6,7 +6,7 @@ export function statusCheck(statusData) {
   if (statusData) {
     return kinds[statusData];
   }
-  return 'Квартира';
+  return null;
 }
 
 export function parkingCheck(parkingData) {
@@ -16,7 +16,7 @@ export function parkingCheck(parkingData) {
   return 'Нет';
 }
 
-export function isUndef(dataToFixed) {
+export function formatToFixed(dataToFixed) {
   if (dataToFixed) {
     return dataToFixed.toFixed(2);
   }
