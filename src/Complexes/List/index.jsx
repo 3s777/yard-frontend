@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Banner from './Banner';
 import DevelopmentSection from './DevelopmentSection';
 import Card from './Card';
-import { getApi } from '../../getApi';
+import { get } from '../../api';
 
 const Content = styled.main`
   padding-bottom: 3rem;
@@ -14,13 +14,13 @@ class Cards extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [],
+      complexes: [],
     };
   }
 
   componentDidMount() {
-    getApi('/complexes?filter[state]=public').then((json) => {
-      this.setState({ data: json.items });
+    get('complexes?filter[state]=public').then((json) => {
+      this.setState({ complexes: json.items });
     });
   }
 
@@ -31,7 +31,7 @@ class Cards extends React.Component {
         <DevelopmentSection />
         <Content>
           <Grid>
-            {this.state.data.map(complex => <Card complex={complex} key={complex.id} />)}
+            {this.state.complexes.map(complex => <Card complex={complex} key={complex.id} />)}
           </Grid>
         </Content>
       </div>

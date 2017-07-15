@@ -17,6 +17,10 @@ const HeaderWrap = styled.div`
   padding-bottom: 1.25rem;
 `;
 
+const LogoLink = styled(Link)`
+  line-height: 0;
+`;
+
 const Logo = styled.img`
   width: 11.1875rem;
   height: 1.5rem;
@@ -27,7 +31,7 @@ const Nav = styled.nav`
 `;
 
 const NavLink = styled(Link)`
-  margin-left: 1.75rem;
+  margin-left: 2rem;
   line-height: 1.5;
   color: #3e4247;
   text-decoration: none;
@@ -37,7 +41,7 @@ export default () =>
   (<Header>
     <Grid>
       <HeaderWrap>
-        <Link to="/"><Logo src={logo} alt="Compass Logo" /></Link>
+        <LogoLink to="/"><Logo src={logo} alt="Compass Logo" /></LogoLink>
         <Nav>
           <NavLink to="/">Купить</NavLink>
           <NavLink to="/">Снять</NavLink>

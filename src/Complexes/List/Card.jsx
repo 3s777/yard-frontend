@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { imagesUrl } from '../../getApi';
+import { imagesUrl } from '../functions';
 
 const Card = styled(Link)`
   display: flex;

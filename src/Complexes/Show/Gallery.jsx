@@ -1,7 +1,8 @@
 import React from 'react';
 import { Grid } from 'react-flexbox-grid';
 import styled from 'styled-components';
-import { imagesUrl } from '../../getApi';
+import pluralize from 'pluralize-ru';
+import { imagesUrl } from '../functions';
 
 const Gallery = styled.div`
   display: flex;
@@ -36,6 +37,13 @@ const CounterButton = styled.button`
 
 export default function (props) {
   const images = props.images || [];
+  const photoPluralize = pluralize(
+    images.length,
+    'фотографий',
+    'фотография',
+    'фотографии',
+    'фотографий',
+  );
   return (
     <div>
       <Gallery>
@@ -51,7 +59,7 @@ export default function (props) {
       <Counter>
         <Grid>
           <CounterButton>
-            {images.length} фотография
+            {`${images.length} ${photoPluralize}`}
           </CounterButton>
         </Grid>
       </Counter>

@@ -10,7 +10,7 @@ import Infrastructure from './Infrastructure';
 import Offers from './Offers';
 import Place from './Place';
 import Maps from './Maps';
-import { getApi } from '../../getApi';
+import { get } from '../../api';
 
 const Complex = styled.main`
   padding-top: 1.5rem;
@@ -28,7 +28,7 @@ class ComplexData extends React.Component {
 
   componentDidMount() {
     const complexSlug = this.props.match.params.slug;
-    getApi(`/complexes/${complexSlug}`).then((json) => {
+    get(`complexes/${complexSlug}`).then((json) => {
       this.setState({ complex: json });
     });
   }

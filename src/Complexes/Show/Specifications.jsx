@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
-import { statusCheck, parkingCheck, isUndef } from './functions';
+import { statusCheck, parkingCheck, isUndef } from '../functions';
 import { securityKinds, constructionKinds, quarters } from '../../Translation';
 
 const Specifications = styled.div`

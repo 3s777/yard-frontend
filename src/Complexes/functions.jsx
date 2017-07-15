@@ -1,4 +1,6 @@
-import { kinds } from '../../Translation';
+import { kinds } from '../Translation';
+
+export const imagesUrl = 'https://yard-images.s3.amazonaws.com/';
 
 export function statusCheck(statusData) {
   if (statusData) {
