@@ -5,3 +5,4 @@ script:
   - yarn prepush
   - yarn build
   - now build --public --token $NOW-TOKEN
+  - now alias mosienko-yard-frontend.now.sh --public --token $NOW-TOKEN
