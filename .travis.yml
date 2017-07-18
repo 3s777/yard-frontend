@@ -1,8 +1,14 @@
 language: node_js
 node_js:
   - "node"
+
 script:
   - yarn prepush
   - yarn build
+
+deploy:
+  on:
+    branch: master
+  script:
   - now build --public --name=compass --token $NowToken
   - now alias --token $NowToken

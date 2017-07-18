@@ -86,7 +86,7 @@ export default function (props) {
             {propertyKind && <Value>{statusCheck(propertyKind)}</Value>}
             <Label>Цена</Label>
             <Value>от {formatToFixed(priceFromRub)} до {formatToFixed(priceToRub)} млн</Value>
-            <Label>Безопасност</Label>
+            <Label>Безопасность</Label>
             <Value>{securityKinds[security]}</Value>
           </List>
         </Col>
