@@ -84,7 +84,7 @@ export default function (props) {
             <Value>{propertiesCount}</Value>
             {propertyKind && <Label>Статус</Label>}
             {propertyKind && <Value>{statusCheck(propertyKind)}</Value>}
-            <Label>Цена</Label>
+            <Label>Цены</Label>
             <Value>от {formatToFixed(priceFromRub)} до {formatToFixed(priceToRub)} млн</Value>
             <Label>Безопасность</Label>
             <Value>{securityKinds[security]}</Value>

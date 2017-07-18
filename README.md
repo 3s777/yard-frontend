@@ -9,7 +9,6 @@ In project we use
   - Yarn
   - Eslint
   - Eslint-config-airbnb
-  - Husky
   - Now.sh
   - Travis-ci.org
   - Flow.org
@@ -17,9 +16,21 @@ In project we use
   - Html5
   - Css3
 
-# How it work
+## How it work
 
-  - yarn start (run application)
-  - yarn prepush (check eslint rules)
-  - yarn build (local build)
-  - now build (deploy on now.sh)
+### Run application
+```sh
+$ yarn start
+```
+### Check eslint rules
+```sh
+$ yarn lint
+```
+### Local build
+```sh
+$ yarn build
+```
+### Deploy on now.sh
+```sh
+$ now build
+```
