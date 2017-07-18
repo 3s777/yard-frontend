@@ -9,6 +9,7 @@ In project we use
   - Yarn
   - Eslint
   - Eslint-config-airbnb
+  - Husky
   - Now.sh
   - Travis-ci.org
   - Flow.org

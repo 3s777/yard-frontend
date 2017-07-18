@@ -4,5 +4,5 @@ node_js:
 script:
   - yarn prepush
   - yarn build
-  - now build --public --token $NowToken
+  - now build --public --name=compass --token $NowToken
   - now alias --token $NowToken
