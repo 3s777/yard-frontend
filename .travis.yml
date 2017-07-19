@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - "node"
+
+script:
+  - yarn lint
+  - yarn build
+
+deploy:
+  on:
+    branch: master
+  script:
+  - now build --public --name=compass --token $NOW_TOKEN
+  - now alias --token $NOW_TOKEN
