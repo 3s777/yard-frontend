@@ -2,6 +2,7 @@
 import React from 'react';
 import { Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
+import type { AmenityTypes } from '../types';
 
 const Infrastructure = styled.div`
   padding-top: 2rem;
@@ -29,7 +30,11 @@ const InfrastructureItem = styled.div`
   }
 `;
 
-export default function (props: Object) {
+type Props = {
+  amenities: Array<AmenityTypes>,
+};
+
+export default function (props: Props) {
   const amenities = props.amenities || [];
   return (
     <Infrastructure>

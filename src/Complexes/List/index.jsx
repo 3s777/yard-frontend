@@ -6,20 +6,16 @@ import Banner from './Banner';
 import DevelopmentSection from './DevelopmentSection';
 import Card from './Card';
 import { get } from '../../api';
+import type { ComplexTypes } from '../types';
 
 const Content = styled.main`
   padding-bottom: 3rem;
 `;
 
 class Cards extends React.Component {
-  constructor(props: Object) {
-    super(props);
-    this.state = {
-      complexes: [],
-    };
-  }
-  state: {
-    complexes: Array<Object>,
+  state: Array<ComplexTypes>;
+  state = {
+    complexes: [],
   };
 
   componentDidMount() {

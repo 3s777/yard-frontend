@@ -2,6 +2,7 @@
 import React from 'react';
 import { Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
+import type { OfferTypes } from '../types';
 
 const Offer = styled.div`
   padding-top: 1.5rem;
@@ -59,7 +60,7 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-export default function (props: Object) {
+export default function (props: OfferTypes) {
   return (
     <Col lg={4}>
       <Offer>

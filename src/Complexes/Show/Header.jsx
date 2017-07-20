@@ -2,6 +2,7 @@
 import React from 'react';
 import { Grid } from 'react-flexbox-grid';
 import styled from 'styled-components';
+import type { LocationTypes } from '../types';
 
 const Header = styled.div`
   display: flex;
@@ -45,7 +46,12 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-export default function (props: Object) {
+type Props = {
+  title: string,
+  location: LocationTypes,
+};
+
+export default function (props: Props) {
   return (
     <Grid>
       <Header>

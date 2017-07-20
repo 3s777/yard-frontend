@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { imagesUrl } from '../functions';
+import type { CardTypes } from '../types';
 
 const Card = styled(Link)`
   display: flex;
@@ -53,7 +54,7 @@ const Description = styled.p`
   color: #3e4247;
 `;
 
-export default function (props: Object) {
+export default function (props: { complex: CardTypes }) {
   return (
     <Card to={`complexes/${props.complex.slug}`}>
       <Photo
@@ -68,7 +69,7 @@ export default function (props: Object) {
           {props.complex.location.house}
         </District>
         <Title>{props.complex.name}</Title>
-        <Description>{props.children}</Description>
+        <Description>{props.complex.shortDescription}</Description>
       </Info>
     </Card>
   );

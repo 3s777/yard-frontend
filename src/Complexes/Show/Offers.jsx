@@ -21,7 +21,11 @@ const Title = styled.h2`
   text-align: center;
 `;
 
-export default function (props: Object) {
+type Props = {
+  title: string,
+};
+
+export default function (props: Props) {
   return (
     <Offers>
       <Grid>

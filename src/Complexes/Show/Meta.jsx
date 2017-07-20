@@ -31,7 +31,11 @@ const SubTitle = styled.small`
   color: #a9afb6;
 `;
 
-export default function (props: Object) {
+type Props = {
+  architect: string,
+};
+
+export default function (props: Props) {
   return (
     <Meta>
       <Title>{props.architect}<SubTitle>архитектор</SubTitle></Title>

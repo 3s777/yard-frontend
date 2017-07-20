@@ -29,7 +29,11 @@ const Paragraph = styled.p`
   }
 `;
 
-export default function (props: Object) {
+type Props = {
+  fullDescription: string,
+};
+
+export default function (props: Props) {
   return (
     <Description>
       <Row>

@@ -4,6 +4,7 @@ import { Grid } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import pluralize from 'pluralize-ru';
 import { imagesUrl } from '../functions';
+import type { GalleryImage } from '../types';
 
 const Gallery = styled.div`
   display: flex;
@@ -36,7 +37,9 @@ const CounterButton = styled.button`
   border-radius: 0.125rem;
 `;
 
-export default function (props: Object) {
+type Props = { images: Array<GalleryImage>, alt: string };
+
+export default function (props: Props) {
   const images = props.images || [];
   const photoPluralize = pluralize(
     images.length,
