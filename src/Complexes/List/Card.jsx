@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
@@ -52,7 +53,7 @@ const Description = styled.p`
   color: #3e4247;
 `;
 
-export default function (props) {
+export default function (props: Object) {
   return (
     <Card to={`complexes/${props.complex.slug}`}>
       <Photo

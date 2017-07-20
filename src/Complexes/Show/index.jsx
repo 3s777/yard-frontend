@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import { Grid } from 'react-flexbox-grid';
 import styled from 'styled-components';
@@ -19,12 +20,15 @@ const Complex = styled.main`
 `;
 
 class ComplexData extends React.Component {
-  constructor(props) {
+  constructor(props: Object) {
     super(props);
     this.state = {
-      complex: [],
+      complex: {},
     };
   }
+  state: {
+    complex: Object,
+  };
 
   componentDidMount() {
     const complexSlug = this.props.match.params.slug;

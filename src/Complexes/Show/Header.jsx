@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import { Grid } from 'react-flexbox-grid';
 import styled from 'styled-components';
@@ -44,7 +45,7 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-export default function (props) {
+export default function (props: Object) {
   return (
     <Grid>
       <Header>

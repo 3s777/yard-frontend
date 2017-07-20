@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import { Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
@@ -28,7 +29,7 @@ const InfrastructureItem = styled.div`
   }
 `;
 
-export default function (props) {
+export default function (props: Object) {
   const amenities = props.amenities || [];
   return (
     <Infrastructure>

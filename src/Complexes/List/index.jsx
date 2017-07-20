@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import { Grid } from 'react-flexbox-grid';
 import styled from 'styled-components';
@@ -11,12 +12,15 @@ const Content = styled.main`
 `;
 
 class Cards extends React.Component {
-  constructor(props) {
+  constructor(props: Object) {
     super(props);
     this.state = {
       complexes: [],
     };
   }
+  state: {
+    complexes: Array<Object>,
+  };
 
   componentDidMount() {
     get('complexes?filter[state]=public').then((json) => {

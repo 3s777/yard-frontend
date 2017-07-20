@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
@@ -47,13 +48,15 @@ const Distance = styled.dd`
   }
 `;
 
+const url = process.env.PUBLIC_URL || '';
+
 export default () =>
   (<ComplexMap>
     <Grid>
       <Row>
         <Col lg={6}>
           <Photo
-            src={`${process.env.PUBLIC_URL}/map.png`}
+            src={`${url}/map.png`}
             srcSet="/map@2x.png 2x, /map@3x.png 3x"
             alt="Карта местности комплекса"
           />

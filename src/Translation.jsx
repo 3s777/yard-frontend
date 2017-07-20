@@ -1,3 +1,4 @@
+// @flow
 export const offerKinds = {
   purchase: 'Покупка',
   rent: 'Аренда',

@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import { Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
@@ -28,18 +29,21 @@ const Paragraph = styled.p`
   }
 `;
 
-export default props =>
-  (<Description>
-    <Row>
-      <Col lg={2}>
-        <Title>Описание</Title>
-      </Col>
-      <Col lg={10}>
-        <article>
-          <Paragraph>
-            {props.fullDescription}
-          </Paragraph>
-        </article>
-      </Col>
-    </Row>
-  </Description>);
+export default function (props: Object) {
+  return (
+    <Description>
+      <Row>
+        <Col lg={2}>
+          <Title>Описание</Title>
+        </Col>
+        <Col lg={10}>
+          <article>
+            <Paragraph>
+              {props.fullDescription}
+            </Paragraph>
+          </article>
+        </Col>
+      </Row>
+    </Description>
+  );
+}

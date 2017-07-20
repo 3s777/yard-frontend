@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import { Grid } from 'react-flexbox-grid';
 import styled from 'styled-components';
@@ -35,7 +36,7 @@ const CounterButton = styled.button`
   border-radius: 0.125rem;
 `;
 
-export default function (props) {
+export default function (props: Object) {
   const images = props.images || [];
   const photoPluralize = pluralize(
     images.length,
