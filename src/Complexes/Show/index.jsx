@@ -12,7 +12,7 @@ import Offers from './Offers';
 import Place from './Place';
 import Maps from './Maps';
 import { get } from '../../api';
-import type { ComplexTypes } from '../types';
+import type { ComplexType } from '../types';
 
 const Complex = styled.main`
   padding-top: 1.5rem;
@@ -21,7 +21,7 @@ const Complex = styled.main`
 `;
 
 type ComplexInfo = {
-  complex: ComplexTypes,
+  complex: ComplexType,
 };
 
 class ComplexData extends React.Component {

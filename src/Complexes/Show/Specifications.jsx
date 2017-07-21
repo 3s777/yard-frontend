@@ -4,7 +4,7 @@ import { Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import { statusCheck, parkingCheck, formatToFixed } from '../functions';
 import { securityKinds, constructionKinds, quarters } from '../../Translation';
-import type { ComplexTypes } from '../types';
+import type { ComplexType } from '../types';
 
 const Specifications = styled.div`
   padding-top: 2rem;
@@ -45,7 +45,7 @@ const Value = styled.dd`
   color: #3e4247;
 `;
 
-type Props = { complex: ComplexTypes };
+type Props = { complex: ComplexType };
 
 export default function (props: Props) {
   const {

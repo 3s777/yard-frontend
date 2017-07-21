@@ -5,7 +5,7 @@ type Price = {
   max: number,
 };
 
-type DetailsTypes = {
+type DetailsType = {
   architect: string,
   security: string,
   constructionKind: string,
@@ -23,7 +23,7 @@ type DetailsTypes = {
   commissioningQuarter: string,
 };
 
-type StatisticsTypes = {
+type StatisticsType = {
   propertiesCount: number,
   price: {
     from: {
@@ -44,7 +44,7 @@ type Area = {
   max: number,
 };
 
-export type OfferTypes = {
+export type OfferType = {
   title: string,
   area: Area,
   price: Price,
@@ -54,19 +54,19 @@ export type GalleryImage = {
   id: string,
 };
 
-export type LocationTypes = {
+export type LocationType = {
   subLocalityName: string,
   street: string,
   house: number,
   postalCode: number,
 };
 
-export type AmenityTypes = {
+export type AmenityType = {
   id: number,
   name: string,
 };
 
-export type ComplexTypes = {
+export type ComplexType = {
   id?: number,
   name?: string,
   slug?: string,
@@ -74,15 +74,15 @@ export type ComplexTypes = {
   fullDescription?: string,
   location?: Location,
   shortDescription?: string,
-  details?: DetailsTypes,
-  statistics?: StatisticsTypes,
-  amenities?: Array<AmenityTypes>,
+  details?: DetailsType,
+  statistics?: StatisticsType,
+  amenities?: Array<AmenityType>,
 };
 
-export type CardTypes = {
+export type CardType = {
   slug: string,
   name: string,
   shortDescription: string,
-  location: LocationTypes,
+  location: LocationType,
   images: Array<GalleryImage>,
 };

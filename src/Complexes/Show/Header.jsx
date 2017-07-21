@@ -2,7 +2,7 @@
 import React from 'react';
 import { Grid } from 'react-flexbox-grid';
 import styled from 'styled-components';
-import type { LocationTypes } from '../types';
+import type { LocationType } from '../types';
 
 const Header = styled.div`
   display: flex;
@@ -48,7 +48,7 @@ const Button = styled.button`
 
 type Props = {
   title: string,
-  location: LocationTypes,
+  location: LocationType,
 };
 
 export default function (props: Props) {
