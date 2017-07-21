@@ -2,6 +2,10 @@ language: node_js
 node_js:
   - "node"
 
+before_script:
+  - yarn flow-typed install
+  - yarn flow
+
 script:
   - yarn lint
   - yarn build

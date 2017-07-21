@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Grid, Row, Col } from 'react-flexbox-grid';
@@ -40,6 +41,8 @@ const Photo = styled.img`
   height: 35rem;
 `;
 
+const url = process.env.PUBLIC_URL || '';
+
 export default () =>
   (<Place>
     <Grid>
@@ -51,7 +54,7 @@ export default () =>
         </Col>
         <Col lg={6}>
           <Photo
-            src={`${process.env.PUBLIC_URL}/polyanka-photo.jpg`}
+            src={`${url}/polyanka-photo.jpg`}
             srcSet="/polyanka-photo@2x.jpg 2x, /polyanka-photo@3x.jpg 3x"
             alt="Полянка"
           />

@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import { Grid } from 'react-flexbox-grid';
 import styled from 'styled-components';
@@ -5,18 +6,17 @@ import Banner from './Banner';
 import DevelopmentSection from './DevelopmentSection';
 import Card from './Card';
 import { get } from '../../api';
+import type { ComplexType } from '../types';
 
 const Content = styled.main`
   padding-bottom: 3rem;
 `;
 
 class Cards extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      complexes: [],
-    };
-  }
+  state: Array<ComplexType>;
+  state = {
+    complexes: [],
+  };
 
   componentDidMount() {
     get('complexes?filter[state]=public').then((json) => {

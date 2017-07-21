@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import styled from 'styled-components';
 
@@ -30,7 +31,14 @@ const SubTitle = styled.small`
   color: #a9afb6;
 `;
 
-export default props =>
-  (<Meta>
-    <Title>{props.architect}<SubTitle>архитектор</SubTitle></Title>
-  </Meta>);
+type Props = {
+  architect: string,
+};
+
+export default function (props: Props) {
+  return (
+    <Meta>
+      <Title>{props.architect}<SubTitle>архитектор</SubTitle></Title>
+    </Meta>
+  );
+}

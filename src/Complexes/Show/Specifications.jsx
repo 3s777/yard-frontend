@@ -1,8 +1,10 @@
+// @flow
 import React from 'react';
 import { Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import { statusCheck, parkingCheck, formatToFixed } from '../functions';
 import { securityKinds, constructionKinds, quarters } from '../../Translation';
+import type { ComplexType } from '../types';
 
 const Specifications = styled.div`
   padding-top: 2rem;
@@ -43,7 +45,9 @@ const Value = styled.dd`
   color: #3e4247;
 `;
 
-export default function (props) {
+type Props = { complex: ComplexType };
+
+export default function (props: Props) {
   const {
     details: {
       propertyKind,
@@ -63,16 +67,10 @@ export default function (props) {
     props.complex || {};
 
   const cHeight = ceilHeight || {};
-  const cHeightFrom = cHeight.from;
-  const cHeightTo = cHeight.to;
   const tArea = totalArea || {};
-  const tAreaFrom = tArea.from;
-  const tAreaTo = tArea.to;
   const complexPrice = price || {};
   const priceFrom = complexPrice.from || {};
   const priceTo = complexPrice.to || {};
-  const priceFromRub = priceFrom.rub / 1000000;
-  const priceToRub = priceTo.rub / 1000000;
 
   return (
     <Specifications>
@@ -85,7 +83,10 @@ export default function (props) {
             {propertyKind && <Label>Статус</Label>}
             {propertyKind && <Value>{statusCheck(propertyKind)}</Value>}
             <Label>Цены</Label>
-            <Value>от {formatToFixed(priceFromRub)} до {formatToFixed(priceToRub)} млн</Value>
+            <Value>
+              от {formatToFixed(priceFrom.rub / 1000000)} до {formatToFixed(priceTo.rub / 1000000)}{' '}
+              млн
+            </Value>
             <Label>Безопасность</Label>
             <Value>{securityKinds[security]}</Value>
           </List>
@@ -95,9 +96,9 @@ export default function (props) {
             <Label>Конструкция корпусов</Label>
             <Value>{constructionKinds[constructionKind]}</Value>
             <Label>Площадь</Label>
-            <Value>от {formatToFixed(tAreaFrom)} до {formatToFixed(tAreaTo)} м²</Value>
+            <Value>от {formatToFixed(tArea.from)} до {formatToFixed(tArea.to)} м²</Value>
             <Label>Высота потолков</Label>
-            <Value>{formatToFixed(cHeightFrom)} - {formatToFixed(cHeightTo)} м</Value>
+            <Value>{formatToFixed(cHeight.from)} - {formatToFixed(cHeight.to)} м</Value>
             <Label>Обслуживание</Label>
             <Value>{maintenanceCosts} руб / м² / месяц</Value>
           </List>

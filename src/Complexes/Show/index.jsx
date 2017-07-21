@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import { Grid } from 'react-flexbox-grid';
 import styled from 'styled-components';
@@ -11,6 +12,7 @@ import Offers from './Offers';
 import Place from './Place';
 import Maps from './Maps';
 import { get } from '../../api';
+import type { ComplexType } from '../types';
 
 const Complex = styled.main`
   padding-top: 1.5rem;
@@ -18,13 +20,15 @@ const Complex = styled.main`
   background-color: #fff;
 `;
 
+type ComplexInfo = {
+  complex: ComplexType,
+};
+
 class ComplexData extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      complex: [],
-    };
-  }
+  state: ComplexInfo;
+  state = {
+    complex: {},
+  };
 
   componentDidMount() {
     const complexSlug = this.props.match.params.slug;
@@ -34,6 +38,7 @@ class ComplexData extends React.Component {
   }
 
   render() {
+    const { complex } = this.state;
     const location = this.state.complex.location || {};
     const images = this.state.complex.images || [];
     const amenities = this.state.complex.amenities || [];
@@ -46,7 +51,7 @@ class ComplexData extends React.Component {
         <Gallery images={images} alt={this.state.complex.name} />
         <Grid>
           <Meta counter={resalePropertiesCount} architect={architect} />
-          <Specifications complex={this.state.complex} />
+          <Specifications complex={complex} />
           {this.state.complex.fullDescription &&
             <Description fullDescription={this.state.complex.fullDescription} />}
           {amenities.length > 0 && <Infrastructure amenities={amenities} />}

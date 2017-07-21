@@ -1,6 +1,8 @@
+// @flow
 import React from 'react';
 import { Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
+import type { OfferType } from '../types';
 
 const Offer = styled.div`
   padding-top: 1.5rem;
@@ -58,20 +60,23 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-export default props =>
-  (<Col lg={4}>
-    <Offer>
-      <Title>{props.title}</Title>
-      <Info>
-        <Label>Площадь</Label>
-        <Value>от {props.area.min} до {props.area.max} м²</Value>
-      </Info>
-      <Info>
-        <Label>Стоимость</Label>
-        <Value>от {props.price.min} до {props.price.max} млн.руб</Value>
-      </Info>
-      <Button>
-        Посмотреть предложения
-      </Button>
-    </Offer>
-  </Col>);
+export default function (props: OfferType) {
+  return (
+    <Col lg={4}>
+      <Offer>
+        <Title>{props.title}</Title>
+        <Info>
+          <Label>Площадь</Label>
+          <Value>от {props.area.min} до {props.area.max} м²</Value>
+        </Info>
+        <Info>
+          <Label>Стоимость</Label>
+          <Value>от {props.price.min} до {props.price.max} млн.руб</Value>
+        </Info>
+        <Button>
+          Посмотреть предложения
+        </Button>
+      </Offer>
+    </Col>
+  );
+}

@@ -1,6 +1,6 @@
 {
-  "extends": "airbnb",
-  "plugins": ["react", "jsx-a11y", "import"],
+  "extends": ["airbnb","plugin:flowtype/recommended"],
+  "plugins": ["react", "jsx-a11y", "import", "flowtype"],
   "rules": {
      "react/prop-types": "off",
      "no-undef": "off"

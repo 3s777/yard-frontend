@@ -1,6 +1,8 @@
+// @flow
 import React from 'react';
 import { Grid } from 'react-flexbox-grid';
 import styled from 'styled-components';
+import type { LocationType } from '../types';
 
 const Header = styled.div`
   display: flex;
@@ -44,7 +46,12 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-export default function (props) {
+type Props = {
+  title: string,
+  location: LocationType,
+};
+
+export default function (props: Props) {
   return (
     <Grid>
       <Header>

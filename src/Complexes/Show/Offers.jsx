@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import { Grid, Row } from 'react-flexbox-grid';
 import styled from 'styled-components';
@@ -20,28 +21,35 @@ const Title = styled.h2`
   text-align: center;
 `;
 
-export default props =>
-  (<Offers>
-    <Grid>
-      <Title>
-        Предложения в ЖК «{props.title}»
-      </Title>
-      <Row>
-        <Offer
-          title="1-комнатные квартиры"
-          area={{ min: 59, max: 120 }}
-          price={{ min: 20.3, max: 84.2 }}
-        />
-        <Offer
-          title="2-комнатные квартиры"
-          area={{ min: 59, max: 120 }}
-          price={{ min: 20.3, max: 84.2 }}
-        />
-        <Offer
-          title="3-комнатные квартиры"
-          area={{ min: 59, max: 120 }}
-          price={{ min: 20.3, max: 84.2 }}
-        />
-      </Row>
-    </Grid>
-  </Offers>);
+type Props = {
+  title: string,
+};
+
+export default function (props: Props) {
+  return (
+    <Offers>
+      <Grid>
+        <Title>
+          Предложения в ЖК «{props.title}»
+        </Title>
+        <Row>
+          <Offer
+            title="1-комнатные квартиры"
+            area={{ min: 59, max: 120 }}
+            price={{ min: 20.3, max: 84.2 }}
+          />
+          <Offer
+            title="2-комнатные квартиры"
+            area={{ min: 59, max: 120 }}
+            price={{ min: 20.3, max: 84.2 }}
+          />
+          <Offer
+            title="3-комнатные квартиры"
+            area={{ min: 59, max: 120 }}
+            price={{ min: 20.3, max: 84.2 }}
+          />
+        </Row>
+      </Grid>
+    </Offers>
+  );
+}
