@@ -4,11 +4,16 @@ import styled from 'styled-components';
 import developmentLogo from './compass-development-logo.svg';
 
 const Banner = styled.div`
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-  line-height: 0;
-  text-align: center;
-  background-color: #161616;
+  display: none;
+
+  @media (min-width: 48rem) {
+    display: block;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    line-height: 0;
+    text-align: center;
+    background-color: #161616;
+  }
 `;
 
 const Logo = styled.img`

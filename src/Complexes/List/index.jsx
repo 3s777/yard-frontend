@@ -9,7 +9,15 @@ import { get } from '../../api';
 import type { ComplexType } from '../types';
 
 const Content = styled.main`
-  padding-bottom: 3rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  @media (min-width: 62rem) {
+      padding-left: 0;
+      padding-right: 0;
+      padding-bottom: 1rem;
+  }
 `;
 
 class Cards extends React.Component {

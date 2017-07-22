@@ -4,17 +4,29 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
 
 const Development = styled.section`
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   text-align: center;
+
+  @media (min-width: 48rem) {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
 `;
 
 const Title = styled.h2`
   margin-top: 0;
-  margin-bottom: 0.5rem;
-  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
   line-height: 1.5;
   color: #3e4247;
+
+  @media (min-width: 48rem) {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+  }
 `;
 
 const Description = styled.p`
@@ -30,6 +42,7 @@ const Button = styled.button`
   padding-right: 2rem;
   padding-left: 2rem;
   border: 0;
+  font-family: 'Fira Sans', sans-serif;
   text-align: center;
   color: #fff;
   background: #000;
