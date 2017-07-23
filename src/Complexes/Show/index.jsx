@@ -19,6 +19,7 @@ const Complex = styled.main`
   padding-top: 1rem;
   border-top: 0.0625rem solid #eaebf0;
   background-color: #fff;
+  overflow: hidden;
 
   ${media.xs`
     padding-top: 1.5rem;
