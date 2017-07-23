@@ -13,11 +13,16 @@ import Place from './Place';
 import Maps from './Maps';
 import { get } from '../../api';
 import type { ComplexType } from '../types';
+import { media } from '../functions';
 
 const Complex = styled.main`
-  padding-top: 1.5rem;
+  padding-top: 1rem;
   border-top: 0.0625rem solid #eaebf0;
   background-color: #fff;
+
+  ${media.xs`
+    padding-top: 1.5rem;
+  `};
 `;
 
 type ComplexInfo = {
@@ -51,7 +56,9 @@ class ComplexData extends React.Component {
         <Gallery images={images} alt={this.state.complex.name} />
         <Grid>
           <Meta counter={resalePropertiesCount} architect={architect} />
-          <Specifications complex={complex} />
+        </Grid>
+        <Specifications complex={complex} />
+        <Grid>
           {this.state.complex.fullDescription &&
             <Description fullDescription={this.state.complex.fullDescription} />}
           {amenities.length > 0 && <Infrastructure amenities={amenities} />}

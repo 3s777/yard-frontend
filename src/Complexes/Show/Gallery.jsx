@@ -3,7 +3,7 @@ import React from 'react';
 import { Grid } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import pluralize from 'pluralize-ru';
-import { imagesUrl } from '../functions';
+import { imagesUrl, media } from '../functions';
 import type { GalleryImage } from '../types';
 
 const Gallery = styled.div`
@@ -12,13 +12,19 @@ const Gallery = styled.div`
 `;
 
 const Image = styled.img`
-  height: 400px;
+  height: 25rem;
 `;
 
 const Counter = styled.div`
   margin-top: -2.625rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   position: relative;
   z-index: 10;
+
+  ${media.xs`
+    padding: 0;
+  `};
 `;
 
 const CounterButton = styled.button`

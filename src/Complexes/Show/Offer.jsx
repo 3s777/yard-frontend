@@ -62,7 +62,7 @@ const Button = styled.button`
 
 export default function (props: OfferType) {
   return (
-    <Col lg={4}>
+    <Col xs={4}>
       <Offer>
         <Title>{props.title}</Title>
         <Info>
