@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import footerArrow from './footer-arrow.svg';
+import { media } from './Complexes/functions';
 
 const Footer = styled.footer`
   padding-top: 2rem;
@@ -12,10 +13,10 @@ const Footer = styled.footer`
   padding-right: 1rem;
   background: #111;
 
-  @media (min-width: 75rem) {
+  ${media.lg`
     padding-left: 0;
     padding-right: 0;
-  }
+  `};
 `;
 
 const Title = styled.h4`
@@ -35,9 +36,9 @@ const Info = styled.p`
     margin-top: 1.5rem;
     margin-bottom: 3rem;
 
-    @media (min-width: 48rem) {
+    ${media.xs`
       margin-bottom: auto;
-    }
+    `};
   }
 `;
 
@@ -59,9 +60,9 @@ const ComplexesLink = styled(Link)`
     margin-top: 1rem;
     margin-bottom: 2rem;
 
-    @media (min-width: 48rem) {
+    ${media.xs`
       margin-bottom: auto;
-    }
+    `};
   }
 `;
 
@@ -83,10 +84,10 @@ const Description = styled.p`
   text-align: left;
   color: #a9afb6;
 
-  @media (min-width: 48rem) {
+  ${media.xs`
     margin-top: 5.9375rem;
     margin-bottom: auto;
-  }
+  `};
 `;
 
 export default () =>

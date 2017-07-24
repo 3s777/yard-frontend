@@ -1,4 +1,5 @@
 // @flow
+import { css } from 'styled-components';
 import { kinds } from '../Translation';
 
 export const imagesUrl: string = 'https://yard-images.s3.amazonaws.com/';
@@ -23,3 +24,21 @@ export function formatToFixed(dataToFixed: number) {
   }
   return null;
 }
+
+export const media = {
+  lg: (...args: any) => css`
+    @media (min-width: 75rem) {
+      ${css(...args)}
+    }
+  `,
+  md: (...args: any) => css`
+    @media (min-width: 62rem) {
+      ${css(...args)}
+    }
+  `,
+  xs: (...args: any) => css`
+    @media (min-width: 48rem) {
+      ${css(...args)}
+    }
+  `,
+};

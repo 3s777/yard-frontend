@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Grid } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import logo from './compass-logo.svg';
+import { media } from './Complexes/functions';
 
 const Header = styled.header`
   background-color: #fff;
@@ -13,14 +14,14 @@ const HeaderWrap = styled.div`
   padding-top: 1rem;
   padding-bottom: 1rem;
 
-  @media (min-width: 48rem) {
+  ${media.xs`
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
-  }
+  `};
 `;
 
 const LogoLink = styled(Link)`
@@ -32,19 +33,19 @@ const Logo = styled.img`
   height: 1rem;
   margin-left: 1rem;
 
-  @media (min-width: 48rem) {
+  ${media.xs`
     width: 11.1875rem;
     height: 1.5rem;
-  }
+  `};
 `;
 
 const Nav = styled.nav`
   display: none;
 
-  @media (min-width: 48rem) {
+  ${media.xs`
     display: block;
     text-align: right;
-  }
+  `};
 `;
 
 const NavLink = styled(Link)`

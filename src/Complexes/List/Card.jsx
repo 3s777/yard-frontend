@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { imagesUrl } from '../functions';
+import { imagesUrl, media } from '../functions';
 import type { CardType } from '../types';
 
 const Card = styled(Link)`
@@ -17,22 +17,22 @@ const Card = styled(Link)`
     box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.3);
   }
 
-  @media (min-width: 48rem) {
+  ${media.xs`
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-start;
-  }
+  `};
 `;
 
 const Photo = styled.img`
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 
-    @media (min-width: 48rem) {
-      width: 30.6875rem;
-      height: 21.875rem;
-    }
+  ${media.xs`
+    width: 30.6875rem;
+    height: 21.875rem;
+  `};
 `;
 
 const Info = styled.div`
@@ -42,14 +42,15 @@ const Info = styled.div`
   padding-right: 1rem;
   border-bottom: 0.125rem solid #646971;
   width: 100%;
+  box-sizing: border-box;
 
-  @media (min-width: 75rem) {
-      flex: 0 0 50%;
-      padding-top: 1.5rem;
-      padding-bottom: 1.5rem;
-      padding-left: 2rem;
-      padding-right: 5.375rem;
-  }
+  ${media.md`
+    flex: 0 0 60%;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 2rem;
+    padding-right: 5.375rem;
+  `}
 `;
 
 const District = styled.p`
@@ -66,10 +67,10 @@ const Title = styled.h3`
   line-height: 1.3;
   color: #000000;
 
-  @media (min-width: 62rem) {
+  ${media.md`
     font-size: 2.5rem;
     line-height: 1.4;
-  }
+  `}
 `;
 
 const Description = styled.p`

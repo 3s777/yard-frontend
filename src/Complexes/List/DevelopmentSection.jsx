@@ -2,6 +2,7 @@
 import React from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
+import { media } from '../functions';
 
 const Development = styled.section`
   padding-top: 2rem;
@@ -10,10 +11,10 @@ const Development = styled.section`
   padding-right: 1rem;
   text-align: center;
 
-  @media (min-width: 48rem) {
+  ${media.xs`
     padding-top: 4rem;
     padding-bottom: 4rem;
-  }
+  `};
 `;
 
 const Title = styled.h2`
@@ -23,10 +24,10 @@ const Title = styled.h2`
   line-height: 1.5;
   color: #3e4247;
 
-  @media (min-width: 48rem) {
+  ${media.xs`
     margin-bottom: 0.5rem;
     font-size: 1.5rem;
-  }
+  `};
 `;
 
 const Description = styled.p`

@@ -1,19 +1,20 @@
 // @flow
 import React from 'react';
 import styled from 'styled-components';
+import { media } from '../functions';
 import developmentLogo from './compass-development-logo.svg';
 
 const Banner = styled.div`
   display: none;
 
-  @media (min-width: 48rem) {
+  ${media.xs`
     display: block;
     padding-top: 5rem;
     padding-bottom: 5rem;
     line-height: 0;
     text-align: center;
     background-color: #161616;
-  }
+  `};
 `;
 
 const Logo = styled.img`
