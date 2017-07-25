@@ -48,12 +48,12 @@ const Title = styled.h2`
   font-weight: bold;
   line-height: 1.3;
   color: #3e4247;
-  text-align: center;
 
   ${media.xs`
     padding-left: 0;
     padding-right: 0;
     font-size: 1.5rem;
+    text-align: center;
   `};
 `;
 

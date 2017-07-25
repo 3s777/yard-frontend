@@ -59,6 +59,8 @@ export type LocationType = {
   street: string,
   house: number,
   postalCode: number,
+  latitude: number,
+  longitude: number,
 };
 
 export type AmenityType = {

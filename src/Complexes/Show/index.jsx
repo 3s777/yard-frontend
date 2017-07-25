@@ -66,7 +66,7 @@ class ComplexData extends React.Component {
         </Grid>
         <Offers title={this.state.complex.name} />
         <Place />
-        <Maps />
+        {this.state.complex.location && <Maps location={location} />}
       </Complex>
     );
   }

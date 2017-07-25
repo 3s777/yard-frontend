@@ -1,8 +1,15 @@
 // @flow
+/* eslint-disable react/style-prop-object  */
 import React from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
+import ReactMapboxGl, { Layer, Feature } from 'react-mapbox-gl';
 import styled from 'styled-components';
+import type { LocationType } from '../types';
 import { media } from '../functions';
+
+const Map = ReactMapboxGl({
+  accessToken: process.env.REACT_APP_MAPBOX_TOKEN,
+});
 
 const ComplexMap = styled.div`
   margin-top: 0;
@@ -14,10 +21,10 @@ const ComplexMap = styled.div`
   `};
 `;
 
-const Photo = styled.img`
-  box-shadow: none;
+const Mapbox = styled(Map)`
   width: 100%;
   height: 10.375rem;
+  box-shadow: none;
 
   ${media.lg`
     width: 37.5rem;
@@ -58,8 +65,8 @@ const Place = styled.dt`
 const Distance = styled.dd`
   margin-left: 0;
   margin-bottom: 1.625rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   padding-bottom: 1.5rem;
   border-bottom: 0.0625rem solid #e0e0e1;
   font-size: 1rem;
@@ -77,29 +84,39 @@ const Distance = styled.dd`
   }
 `;
 
-const url = process.env.PUBLIC_URL || '';
+type Props = {
+  location: LocationType,
+};
 
-export default () =>
-  (<ComplexMap>
-    <Grid>
-      <Row>
-        <Col sm={6} xs={12}>
-          <Photo
-            src={`${url}/map.png`}
-            srcSet="/map@2x.png 2x, /map@3x.png 3x"
-            alt="Карта местности комплекса"
-          />
-        </Col>
-        <Col sm={6} xs={12}>
-          <Places>
-            <Place>Красный Октябрь</Place>
-            <Distance>24 минуты, 6 км</Distance>
-            <Place>World className</Place>
-            <Distance>2 минуты, 300 м</Distance>
-            <Place>Третьяковская галерея</Place>
-            <Distance>14 минут, 4 км</Distance>
-          </Places>
-        </Col>
-      </Row>
-    </Grid>
-  </ComplexMap>);
+export default function (props: Props) {
+  const { latitude, longitude } = props.location;
+  return (
+    <ComplexMap>
+      <Grid>
+        <Row>
+          <Col sm={6} xs={12}>
+            <Mapbox
+              style="mapbox://styles/mapbox/basic-v9"
+              zoom={[13]}
+              center={[longitude, latitude]}
+            >
+              <Layer type="symbol" id="marker" layout={{ 'icon-image': 'marker-15' }}>
+                <Feature coordinates={[longitude, latitude]} />
+              </Layer>
+            </Mapbox>
+          </Col>
+          <Col sm={6} xs={12}>
+            <Places>
+              <Place>Красный Октябрь</Place>
+              <Distance>24 минуты, 6 км</Distance>
+              <Place>World className</Place>
+              <Distance>2 минуты, 300 м</Distance>
+              <Place>Третьяковская галерея</Place>
+              <Distance>14 минут, 4 км</Distance>
+            </Places>
+          </Col>
+        </Row>
+      </Grid>
+    </ComplexMap>
+  );
+}
