@@ -111,6 +111,10 @@ class Fulldescription extends React.Component {
   };
 
   render() {
+    const blockHeight = {
+      height: 'auto',
+    };
+
     return (
       <Description>
         <Row>
@@ -118,7 +122,7 @@ class Fulldescription extends React.Component {
             <Title>Описание</Title>
           </Col>
           <Col sm={10} xs={12}>
-            <Content style={{ height: this.state.isOpened ? 'auto' : '20rem' }}>
+            <Content style={this.state.isOpened ? blockHeight : null}>
               <Paragraph>
                 ВТБ Арена Парк — современный квартал в 10 минутах езды от Кремля. Территория
                 разделена
