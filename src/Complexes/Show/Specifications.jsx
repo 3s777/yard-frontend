@@ -17,7 +17,7 @@ const ScrollMobile = styled.div`
 
 const Specifications = styled.div`
   margin: 0 auto;
-  padding-bottom: 2.375rem;
+  padding-bottom: 1rem;
   padding-left: 1rem;
   padding-right: 1rem;
   width: 76rem;
@@ -26,6 +26,7 @@ const Specifications = styled.div`
   ${media.lg`
     padding-left: 0;
     padding-right: 0;
+    padding-bottom: 2.375rem;
   `};
 `;
 

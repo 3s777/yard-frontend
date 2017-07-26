@@ -60,8 +60,7 @@ class ComplexData extends React.Component {
         </Grid>
         <Specifications complex={complex} />
         <Grid>
-          {this.state.complex.fullDescription &&
-            <Description fullDescription={this.state.complex.fullDescription} />}
+          <Description fullDescription={this.state.complex.fullDescription} />
           {amenities.length > 0 && <Infrastructure amenities={amenities} />}
         </Grid>
         <Offers title={this.state.complex.name} />
