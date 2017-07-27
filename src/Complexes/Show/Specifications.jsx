@@ -2,8 +2,8 @@
 import React from 'react';
 import { Row, Col, Grid } from 'react-flexbox-grid';
 import styled from 'styled-components';
-import { statusCheck, parkingCheck, formatToFixed, media } from '../../utils';
-import { securityKinds, constructionKinds, quarters } from '../../Translation';
+import { parkingCheck, formatToFixed, media } from '../../utils';
+import { kinds, securityKinds, constructionKinds, quarters } from './translation';
 import type { ComplexType } from '../types';
 
 const ScrollMobile = styled.div`
@@ -113,7 +113,7 @@ export default function (props: Props) {
                 <Label>Количество квартир</Label>
                 <Value>{propertiesCount}</Value>
                 {propertyKind && <Label>Статус</Label>}
-                {propertyKind && <Value>{statusCheck(propertyKind)}</Value>}
+                {propertyKind && <Value>{kinds[propertyKind]}</Value>}
                 <Label>Цены</Label>
                 <Value>
                   от {formatToFixed(priceFrom.rub / 1000000)} до{' '}

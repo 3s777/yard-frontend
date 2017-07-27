@@ -1,15 +1,7 @@
 // @flow
 import { css } from 'styled-components';
-import { kinds } from './Translation';
 
 export const imagesUrl: string = 'https://images.jqestate.ru/';
-
-export function statusCheck(statusData: string) {
-  if (statusData) {
-    return kinds[statusData];
-  }
-  return null;
-}
 
 export function parkingCheck(parkingData: number) {
   if (parkingData) {
