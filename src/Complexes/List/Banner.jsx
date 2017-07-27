@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import styled from 'styled-components';
-import { media } from '../functions';
+import { media } from '../../utils';
 import developmentLogo from './compass-development-logo.svg';
 
 const Banner = styled.div`

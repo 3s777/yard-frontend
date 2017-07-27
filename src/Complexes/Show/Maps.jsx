@@ -5,7 +5,7 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 import ReactMapboxGl, { Layer, Feature } from 'react-mapbox-gl';
 import styled from 'styled-components';
 import type { LocationType } from '../types';
-import { media } from '../functions';
+import { media } from '../../utils';
 
 const Map = ReactMapboxGl({
   accessToken: process.env.REACT_APP_MAPBOX_TOKEN,

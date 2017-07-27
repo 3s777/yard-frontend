@@ -13,7 +13,7 @@ import Place from './Place';
 import Maps from './Maps';
 import { get } from '../../api';
 import type { ComplexType } from '../types';
-import { media } from '../functions';
+import { media } from '../../utils';
 
 const Complex = styled.main`
   padding-top: 1rem;
@@ -37,7 +37,7 @@ class ComplexData extends React.Component {
   };
 
   componentDidMount() {
-    const complexSlug = this.props.match.params.slug;
+    const complexSlug = this.props.match.params.id;
     get(`complexes/${complexSlug}`).then((json) => {
       this.setState({ complex: json });
     });

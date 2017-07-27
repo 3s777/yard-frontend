@@ -2,11 +2,15 @@
 import React from 'react';
 import { Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
-import { media } from '../functions';
+import { media } from '../../utils';
 
 const Description = styled.div`
-  padding-bottom: 1.75rem;
+  padding-bottom: 1rem;
   border-bottom: 0.0625rem solid #e0e0e1;
+
+  ${media.xs`
+    padding-bottom: 1.75rem;
+  `};
 `;
 
 const Title = styled.h2`
@@ -55,14 +59,12 @@ const Paragraph = styled.p`
   }
 `;
 
-const Readmore = styled.div`
+const ButtonWrapper = styled.div`
   position: absolute;
   bottom: 0;
   display: flex;
   justify-content: center;
   padding-top: 5.375rem;
-  padding-bottom: 1rem;
-  margin-top: -8.5rem;
   width: 100%;
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), #fff);
 
@@ -111,7 +113,7 @@ class Fulldescription extends React.Component {
   };
 
   render() {
-    const blockHeight = {
+    const contentStyle = {
       height: 'auto',
     };
 
@@ -122,7 +124,7 @@ class Fulldescription extends React.Component {
             <Title>Описание</Title>
           </Col>
           <Col sm={10} xs={12}>
-            <Content style={this.state.isOpened ? blockHeight : null}>
+            <Content style={this.state.isOpened ? contentStyle : null}>
               <Paragraph>
                 ВТБ Арена Парк — современный квартал в 10 минутах езды от Кремля. Территория
                 разделена
@@ -152,9 +154,9 @@ class Fulldescription extends React.Component {
                 можно подышать свежим воздухом во время рабочего перерыва.
               </Paragraph>
               {!this.state.isOpened &&
-                <Readmore>
+                <ButtonWrapper>
                   <Button onClick={this.handleClick}>Прочитать описание</Button>
-                </Readmore>}
+                </ButtonWrapper>}
             </Content>
           </Col>
         </Row>

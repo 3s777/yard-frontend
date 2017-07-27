@@ -1,8 +1,8 @@
 // @flow
 import { css } from 'styled-components';
-import { kinds } from '../Translation';
+import { kinds } from './Translation';
 
-export const imagesUrl: string = 'https://yard-images.s3.amazonaws.com/';
+export const imagesUrl: string = 'https://images.jqestate.ru/';
 
 export function statusCheck(statusData: string) {
   if (statusData) {

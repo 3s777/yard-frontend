@@ -2,7 +2,7 @@
 import React from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
-import { media } from '../functions';
+import { media } from '../../utils';
 
 const Development = styled.section`
   padding-top: 2rem;

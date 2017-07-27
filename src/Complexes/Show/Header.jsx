@@ -3,7 +3,7 @@ import React from 'react';
 import { Grid } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import type { LocationType } from '../types';
-import { media } from '../functions';
+import { media } from '../../utils';
 
 const Header = styled.div`
   display: flex;

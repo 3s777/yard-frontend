@@ -3,7 +3,7 @@ import React from 'react';
 import { Grid } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import pluralize from 'pluralize-ru';
-import { imagesUrl, media } from '../functions';
+import { imagesUrl, media } from '../../utils';
 import type { GalleryImage } from '../types';
 
 const Gallery = styled.div`
@@ -54,14 +54,16 @@ export default function (props: Props) {
     'фотографии',
     'фотографий',
   );
+
   return (
     <div>
       <Gallery>
         {images.map(image =>
           (<Image
             key={image.id}
-            src={`${imagesUrl + image.id}-512`}
-            srcSet={`${imagesUrl + image.id}-1024 2x, ${imagesUrl + image.id}-2048 3x `}
+            src={`${imagesUrl + image.id}-jqestate-512`}
+            srcSet={`${imagesUrl + image.id}-jqestate-1024 2x, ${imagesUrl +
+              image.id}-jqestate-2048 3x `}
             alt={props.alt}
           />),
         )}

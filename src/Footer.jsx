@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import footerArrow from './footer-arrow.svg';
-import { media } from './Complexes/functions';
+import { media } from './utils';
 
 const Footer = styled.footer`
   padding-top: 2rem;

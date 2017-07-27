@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import styled from 'styled-components';
-import { media } from '../functions';
+import { media } from '../../utils';
 
 const Meta = styled.div`
   padding-top: 1.5rem;

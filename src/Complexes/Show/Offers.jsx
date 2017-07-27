@@ -3,7 +3,7 @@ import React from 'react';
 import { Grid, Row } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import Offer from './Offer';
-import { media } from '../functions';
+import { media } from '../../utils';
 
 const Offers = styled.div`
   padding-top: 2rem;

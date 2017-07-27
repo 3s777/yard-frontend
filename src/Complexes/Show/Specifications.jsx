@@ -2,7 +2,7 @@
 import React from 'react';
 import { Row, Col, Grid } from 'react-flexbox-grid';
 import styled from 'styled-components';
-import { statusCheck, parkingCheck, formatToFixed, media } from '../functions';
+import { statusCheck, parkingCheck, formatToFixed, media } from '../../utils';
 import { securityKinds, constructionKinds, quarters } from '../../Translation';
 import type { ComplexType } from '../types';
 
@@ -120,28 +120,32 @@ export default function (props: Props) {
                   {formatToFixed(priceTo.rub / 1000000)}{' '}
                   млн
                 </Value>
-                <Label>Безопасность</Label>
-                <Value>{securityKinds[security]}</Value>
+                {securityKinds[security] && <Label>Безопасность</Label>}
+                {securityKinds[security] && <Value>{securityKinds[security]}</Value>}
               </List>
             </Col>
             <Col xs={4}>
               <List>
-                <Label>Конструкция корпусов</Label>
-                <Value>{constructionKinds[constructionKind]}</Value>
+                {constructionKinds[constructionKind] && <Label>Конструкция корпусов</Label>}
+                {constructionKinds[constructionKind] &&
+                  <Value>{constructionKinds[constructionKind]}</Value>}
                 <Label>Площадь</Label>
                 <Value>от {formatToFixed(tArea.from)} до {formatToFixed(tArea.to)} м²</Value>
-                <Label>Высота потолков</Label>
-                <Value>{formatToFixed(cHeight.from)} - {formatToFixed(cHeight.to)} м</Value>
-                <Label>Обслуживание</Label>
-                <Value>{maintenanceCosts} руб / м² / месяц</Value>
+                {cHeight.from && <Label>Высота потолков</Label>}
+                {cHeight.from &&
+                  <Value>{formatToFixed(cHeight.from)} - {formatToFixed(cHeight.to)} м</Value>}
+                {maintenanceCosts && <Label>Обслуживание</Label>}
+                {maintenanceCosts && <Value>{maintenanceCosts} руб / м² / месяц</Value>}
               </List>
             </Col>
             <Col xs={4}>
               <List>
-                <Label>Начало строительства</Label>
-                <Value>{quarters[startQuarter]} квартал {startYear} года</Value>
-                <Label>Конец строительства</Label>
-                <Value>{quarters[commissioningQuarter]} квартал {commissioningYear} года</Value>
+                {quarters[startQuarter] && <Label>Начало строительства</Label>}
+                {quarters[startQuarter] &&
+                  <Value>{quarters[startQuarter]} квартал {startYear} года</Value>}
+                {quarters[commissioningQuarter] && <Label>Конец строительства</Label>}
+                {quarters[commissioningQuarter] &&
+                  <Value>{quarters[commissioningQuarter]} квартал {commissioningYear} года</Value>}
                 <Label>Наземная парковка</Label>
                 <Value>{parkingCheck(parkings)}</Value>
                 <Label>Подземная парковка</Label>

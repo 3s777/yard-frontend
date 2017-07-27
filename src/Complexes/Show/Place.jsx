@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
-import { media } from '../functions';
+import { media } from '../../utils';
 
 const Place = styled.div`
   padding-top: 0;
