@@ -82,6 +82,7 @@ export type ComplexType = {
 };
 
 export type CardType = {
+  id: number,
   slug: string,
   name: string,
   shortDescription: string,
