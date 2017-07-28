@@ -4,18 +4,24 @@ import { Link } from 'react-router-dom';
 import { Grid } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import logo from './compass-logo.svg';
+import { media } from './utils';
 
 const Header = styled.header`
   background-color: #fff;
 `;
 
 const HeaderWrap = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  ${media.xs`
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  `};
 `;
 
 const LogoLink = styled(Link)`
@@ -23,12 +29,24 @@ const LogoLink = styled(Link)`
 `;
 
 const Logo = styled.img`
-  width: 11.1875rem;
-  height: 1.5rem;
+  width: 7.5rem;
+  height: 1rem;
+  margin-left: 1rem;
+
+  ${media.xs`
+    width: 11.1875rem;
+    height: 1.5rem;
+    margin-left: 0;
+  `};
 `;
 
 const Nav = styled.nav`
-  text-align: right;
+  display: none;
+
+  ${media.xs`
+    display: block;
+    text-align: right;
+  `};
 `;
 
 const NavLink = styled(Link)`

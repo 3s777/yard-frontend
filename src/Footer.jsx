@@ -4,11 +4,19 @@ import { Link } from 'react-router-dom';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import footerArrow from './footer-arrow.svg';
+import { media } from './utils';
 
 const Footer = styled.footer`
   padding-top: 2rem;
   padding-bottom: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   background: #111;
+
+  ${media.lg`
+    padding-left: 0;
+    padding-right: 0;
+  `};
 `;
 
 const Title = styled.h4`
@@ -16,6 +24,7 @@ const Title = styled.h4`
   margin-bottom: 0.5rem;
   font-size: 0.875rem;
   color: #646971;
+  line-height: 1.375rem;
 `;
 
 const Info = styled.p`
@@ -25,6 +34,11 @@ const Info = styled.p`
 
   &:last-child {
     margin-top: 1.5rem;
+    margin-bottom: 3rem;
+
+    ${media.xs`
+      margin-bottom: auto;
+    `};
   }
 `;
 
@@ -44,6 +58,11 @@ const ComplexesLink = styled(Link)`
 
   &:last-child {
     margin-top: 1rem;
+    margin-bottom: 2rem;
+
+    ${media.xs`
+      margin-bottom: auto;
+    `};
   }
 `;
 
@@ -57,27 +76,33 @@ const CompanyLink = styled(Link)`
 `;
 
 const Description = styled.p`
-  margin-top: 5.9375rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
   font-size: 0.6875rem;
   font-weight: 300;
   line-height: 1.8;
   text-align: left;
   color: #a9afb6;
+
+  ${media.xs`
+    margin-top: 5.9375rem;
+    margin-bottom: auto;
+  `};
 `;
 
 export default () =>
   (<Footer>
     <Grid>
       <Row>
-        <Col lg={4}>
+        <Col sm={4} xs={12}>
           <Title>ООО «Ярд»</Title>
           <Info>ОГРН 1175074002531</Info>
           <Info>ИНН 5036165365</Info>
           <Info>+7 (999) 821-14-88</Info>
         </Col>
-        <Col lg={8}>
+        <Col sm={8} xs={12}>
           <Row>
-            <Col lg={3}>
+            <Col md={3} sm={4} xs={12}>
               <FooterNav>
                 <Title>Жилые комплексы</Title>
                 <nav>
@@ -90,7 +115,7 @@ export default () =>
                 </nav>
               </FooterNav>
             </Col>
-            <Col lg={3}>
+            <Col md={3} sm={4} xs={12}>
               <FooterNav>
                 <Title>Компания</Title>
                 <nav>
@@ -101,7 +126,7 @@ export default () =>
             </Col>
           </Row>
           <Row>
-            <Col lg={12}>
+            <Col xs={12}>
               <Description>
                 Любая информация, представленная на данном сайте, носит
                 исключительно информационный характер и ни при каких условиях
