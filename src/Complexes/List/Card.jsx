@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { imagesUrl, media } from '../functions';
+import { imagesUrl, media } from '../../utils';
 import type { CardType } from '../types';
 
 const Card = styled(Link)`
@@ -81,11 +81,11 @@ const Description = styled.p`
 
 export default function (props: { complex: CardType }) {
   return (
-    <Card to={`complexes/${props.complex.slug}`}>
+    <Card to={`complexes/${props.complex.id}`}>
       <Photo
-        src={`${imagesUrl + props.complex.images[0].id}-512`}
-        srcSet={`${imagesUrl + props.complex.images[0].id}-1024 2x, ${imagesUrl +
-          props.complex.images[0].id}-2048 3x `}
+        src={`${imagesUrl + props.complex.images[0].id}-jqestate-512`}
+        srcSet={`${imagesUrl + props.complex.images[0].id}-jqestate-1024 2x, ${imagesUrl +
+          props.complex.images[0].id}-jqestate-2048 3x `}
         alt={props.complex.name}
       />
       <Info>

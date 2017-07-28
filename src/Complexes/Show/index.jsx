@@ -13,11 +13,17 @@ import Place from './Place';
 import Maps from './Maps';
 import { get } from '../../api';
 import type { ComplexType } from '../types';
+import { media } from '../../utils';
 
 const Complex = styled.main`
-  padding-top: 1.5rem;
+  padding-top: 1rem;
   border-top: 0.0625rem solid #eaebf0;
   background-color: #fff;
+  overflow: hidden;
+
+  ${media.xs`
+    padding-top: 1.5rem;
+  `};
 `;
 
 type ComplexInfo = {
@@ -31,7 +37,7 @@ class ComplexData extends React.Component {
   };
 
   componentDidMount() {
-    const complexSlug = this.props.match.params.slug;
+    const complexSlug = this.props.match.params.id;
     get(`complexes/${complexSlug}`).then((json) => {
       this.setState({ complex: json });
     });
@@ -51,14 +57,15 @@ class ComplexData extends React.Component {
         <Gallery images={images} alt={this.state.complex.name} />
         <Grid>
           <Meta counter={resalePropertiesCount} architect={architect} />
-          <Specifications complex={complex} />
-          {this.state.complex.fullDescription &&
-            <Description fullDescription={this.state.complex.fullDescription} />}
+        </Grid>
+        <Specifications complex={complex} />
+        <Grid>
+          <Description fullDescription={this.state.complex.fullDescription} />
           {amenities.length > 0 && <Infrastructure amenities={amenities} />}
         </Grid>
         <Offers title={this.state.complex.name} />
         <Place />
-        <Maps />
+        {this.state.complex.location && <Maps location={location} />}
       </Complex>
     );
   }

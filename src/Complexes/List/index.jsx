@@ -7,7 +7,7 @@ import DevelopmentSection from './DevelopmentSection';
 import Card from './Card';
 import { get } from '../../api';
 import type { ComplexType } from '../types';
-import { media } from '../functions';
+import { media } from '../../utils';
 
 const Content = styled.main`
   padding-bottom: 1rem;

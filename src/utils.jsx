@@ -1,15 +1,7 @@
 // @flow
 import { css } from 'styled-components';
-import { kinds } from '../Translation';
 
-export const imagesUrl: string = 'https://yard-images.s3.amazonaws.com/';
-
-export function statusCheck(statusData: string) {
-  if (statusData) {
-    return kinds[statusData];
-  }
-  return null;
-}
+export const imagesUrl: string = 'https://images.jqestate.ru/';
 
 export function parkingCheck(parkingData: number) {
   if (parkingData) {

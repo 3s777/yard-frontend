@@ -1,13 +1,23 @@
 // @flow
 import React from 'react';
 import styled from 'styled-components';
+import { media } from '../../utils';
 
 const Meta = styled.div`
-  padding-top: 2.625rem;
-  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   border-bottom: 0.0625rem solid #e0e0e1;
   display: flex;
   font-family: 'Philosopher', sans-serif;
+
+  ${media.xs`
+    padding-top: 2.625rem;
+    padding-bottom: 1.5rem;
+    padding-left: 0;
+    padding-right: 0;
+  `};
 `;
 
 const Title = styled.h2`

@@ -59,6 +59,8 @@ export type LocationType = {
   street: string,
   house: number,
   postalCode: number,
+  latitude: number,
+  longitude: number,
 };
 
 export type AmenityType = {
@@ -80,6 +82,7 @@ export type ComplexType = {
 };
 
 export type CardType = {
+  id: number,
   slug: string,
   name: string,
   shortDescription: string,
