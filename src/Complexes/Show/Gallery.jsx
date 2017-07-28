@@ -4,7 +4,7 @@ import { Grid } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import pluralize from 'pluralize-ru';
 import { imagesUrl, media } from '../../utils';
-import type { GalleryImage } from '../types';
+import Carousel from './Carousel';
 
 const Gallery = styled.div`
   display: flex;
@@ -43,38 +43,56 @@ const CounterButton = styled.button`
   border-radius: 0.125rem;
 `;
 
-type Props = { images: Array<GalleryImage>, alt: string };
+class GalleryCarousel extends React.Component {
+  state = { isOpen: false, activeImage: 0 };
 
-export default function (props: Props) {
-  const images = props.images || [];
-  const photoPluralize = pluralize(
-    images.length,
-    'фотографий',
-    'фотография',
-    'фотографии',
-    'фотографий',
-  );
+  toggleCarousel = (id?: number) => {
+    const { isOpen } = this.state;
+    this.setState({ isOpen: !isOpen, activeImage: id || 0 });
+  };
 
-  return (
-    <div>
-      <Gallery>
-        {images.map(image =>
-          (<Image
-            key={image.id}
-            src={`${imagesUrl + image.id}-jqestate-512`}
-            srcSet={`${imagesUrl + image.id}-jqestate-1024 2x, ${imagesUrl +
-              image.id}-jqestate-2048 3x `}
-            alt={props.alt}
-          />),
-        )}
-      </Gallery>
-      <Counter>
-        <Grid>
-          <CounterButton>
-            {images.length} {photoPluralize}
-          </CounterButton>
-        </Grid>
-      </Counter>
-    </div>
-  );
+  render() {
+    const { isOpen, activeImage } = this.state;
+    const images = this.props.images || [];
+    const photoPluralize = pluralize(
+      images.length,
+      'фотографий',
+      'фотография',
+      'фотографии',
+      'фотографий',
+    );
+
+    return (
+      <div>
+        <Gallery>
+          {images.map(image =>
+            (<Image
+              onClick={(e) => {
+                e.stopPropagation();
+                this.toggleCarousel(image.id);
+              }}
+              key={image.id}
+              src={`${imagesUrl + image.id}-jqestate-512`}
+              srcSet={`${imagesUrl + image.id}-jqestate-1024 2x, ${imagesUrl +
+                image.id}-jqestate-2048 3x `}
+              alt={this.props.alt}
+            />),
+          )}
+        </Gallery>
+        <Counter>
+          <Grid>
+            <CounterButton>
+              {images.length} {photoPluralize}
+            </CounterButton>
+            {isOpen &&
+              <Carousel activeImage={activeImage || 0} escHandler={this.toggleCarousel}>
+                {this.props.images}
+              </Carousel>}
+          </Grid>
+        </Counter>
+      </div>
+    );
+  }
 }
+
+export default GalleryCarousel;
