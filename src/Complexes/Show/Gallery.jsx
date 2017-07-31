@@ -1,6 +1,8 @@
 // @flow
 import React from 'react';
 import { Grid } from 'react-flexbox-grid';
+import ReactDOM from 'react-dom';
+import Portal from 'react-portal';
 import styled from 'styled-components';
 import pluralize from 'pluralize-ru';
 import { imagesUrl, media } from '../../utils';
@@ -13,6 +15,7 @@ const Gallery = styled.div`
 
 const Image = styled.img`
   height: 25rem;
+  cursor: pointer;
 `;
 
 const Counter = styled.div`
@@ -43,16 +46,15 @@ const CounterButton = styled.button`
   border-radius: 0.125rem;
 `;
 
-class GalleryCarousel extends React.Component {
-  state = { isOpen: false, activeImage: 0 };
+export default class GalleryCarousel extends React.Component {
+  state = { isPortalOpened: false, activeImage: 0 };
 
-  toggleCarousel = (id?: number) => {
-    const { isOpen } = this.state;
-    this.setState({ isOpen: !isOpen, activeImage: id || 0 });
+  toggleCarousel = (id: number) => {
+    this.setState({ isPortalOpened: !this.state.isPortalOpened, activeImage: id || 0 });
   };
 
   render() {
-    const { isOpen, activeImage } = this.state;
+    const { activeImage } = this.state;
     const images = this.props.images || [];
     const photoPluralize = pluralize(
       images.length,
@@ -65,16 +67,15 @@ class GalleryCarousel extends React.Component {
     return (
       <div>
         <Gallery>
-          {images.map(image =>
+          {images.map((image, id) =>
             (<Image
               onClick={(e) => {
                 e.stopPropagation();
-                this.toggleCarousel(image.id);
+                this.toggleCarousel(id);
               }}
               key={image.id}
-              src={`${imagesUrl + image.id}-jqestate-512`}
-              srcSet={`${imagesUrl + image.id}-jqestate-1024 2x, ${imagesUrl +
-                image.id}-jqestate-2048 3x `}
+              src={`${imagesUrl + image.id}-512`}
+              srcSet={`${imagesUrl + image.id}-1024 2x, ${imagesUrl + image.id}-2048 3x `}
               alt={this.props.alt}
             />),
           )}
@@ -84,15 +85,27 @@ class GalleryCarousel extends React.Component {
             <CounterButton>
               {images.length} {photoPluralize}
             </CounterButton>
-            {isOpen &&
-              <Carousel activeImage={activeImage || 0} escHandler={this.toggleCarousel}>
-                {this.props.images}
-              </Carousel>}
           </Grid>
         </Counter>
+        <Portal
+          closeOnEsc
+          closeOnOutsideClick
+          isOpened={this.state.isPortalOpened}
+          onClose={() => {
+            this.setState({ isPortalOpened: false });
+          }}
+        >
+          <Carousel
+            onClick={this.props.closeModal}
+            activeImage={activeImage || 0}
+            escHandler={this.toggleCarousel}
+            images={this.props.images}
+            closeModal={this.props.closeModal}
+          />
+        </Portal>
       </div>
     );
   }
 }
 
-export default GalleryCarousel;
+ReactDOM.render(<GalleryCarousel />, document.getElementById('root'));

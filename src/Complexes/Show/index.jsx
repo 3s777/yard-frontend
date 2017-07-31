@@ -37,7 +37,7 @@ class ComplexData extends React.Component {
   };
 
   componentDidMount() {
-    const complexSlug = this.props.match.params.id;
+    const complexSlug = this.props.match.params.slug;
     get(`complexes/${complexSlug}`).then((json) => {
       this.setState({ complex: json });
     });

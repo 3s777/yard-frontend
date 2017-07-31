@@ -1,7 +1,7 @@
 // @flow
 import { css } from 'styled-components';
 
-export const imagesUrl: string = 'https://images.jqestate.ru/';
+export const imagesUrl: string = 'https://yard-images.s3.amazonaws.com/';
 
 export function parkingCheck(parkingData: number) {
   if (parkingData) {
