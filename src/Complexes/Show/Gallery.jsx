@@ -1,7 +1,6 @@
 // @flow
 import React from 'react';
 import { Grid } from 'react-flexbox-grid';
-import ReactDOM from 'react-dom';
 import Portal from 'react-portal';
 import styled from 'styled-components';
 import pluralize from 'pluralize-ru';
@@ -50,7 +49,7 @@ export default class GalleryCarousel extends React.Component {
   state = { isPortalOpened: false, activeImage: 0 };
 
   toggleCarousel = (id: number) => {
-    this.setState({ isPortalOpened: !this.state.isPortalOpened, activeImage: id || 0 });
+    this.setState(prevState => ({ isPortalOpened: !prevState.isPortalOpened, activeImage: id }));
   };
 
   render() {
@@ -107,5 +106,3 @@ export default class GalleryCarousel extends React.Component {
     );
   }
 }
-
-ReactDOM.render(<GalleryCarousel />, document.getElementById('root'));

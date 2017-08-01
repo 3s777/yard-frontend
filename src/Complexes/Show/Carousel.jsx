@@ -1,7 +1,7 @@
 /* @flow */
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { imagesUrl } from '../../utils';
+import { imagesUrl, media } from '../../utils';
 
 const Modal = styled.div`
   position: fixed;
@@ -16,9 +16,8 @@ const Modal = styled.div`
 `;
 
 const CarouselImage = styled.img`
-  max-height: 80vh;
+  max-height: 70vh;
   max-width: 80vw;
-  min-width: 50vw;
   width: 100%;
   z-index: 100;
   transition: transform .25s ease-out;
@@ -28,7 +27,7 @@ const CarouselImage = styled.img`
 
 const Title = styled.div`
   position: absolute;
-  bottom: 4rem;
+  bottom: 1rem;
   margin-top: 1.5rem;
   margin-bottom: 0rem;
   width: 100%;
@@ -36,6 +35,10 @@ const Title = styled.div`
   font-weight: 300;
   color: #a9afb6;
   text-align: center;
+
+  ${media.xs`
+    bottom: 4rem;
+  `};
 `;
 
 class Carousel extends Component {
@@ -53,26 +56,40 @@ class Carousel extends Component {
 
   onImageClick = (e: SyntheticInputEvent, id: number) => {
     e.stopPropagation();
-    this.setState({ active: id });
+    let activeId = id;
+    const imageCounter: number = this.props.images.length;
+
+    if (this.state.active === activeId) {
+      if (imageCounter > activeId + 1) {
+        activeId += 1;
+      } else {
+        activeId = 0;
+      }
+    }
+
+    this.setState({ active: activeId });
   };
 
   onKeyboard = (e: KeyboardEvent) => {
     e.stopPropagation();
-    if (e.keyCode === 37) this.navImage(this.state.active - 1);
-    if (e.keyCode === 39) this.navImage(this.state.active + 1);
+    if (e.keyCode === 37) this.navigate(this.state.active - 1);
+    if (e.keyCode === 39) this.navigate(this.state.active + 1);
   };
 
   getItemTransformation(id: number) {
+    const baseTransform: string = `50vw - 50% - ${this.state.active * 100}%`;
+    const imageIndent = window.innerWidth > 768 ? '4rem' : '1rem';
+
     return {
       transform: this.state.active === id
-        ? `translateX(calc(50vw - 50% - ${this.state.active * 100}%))`
-        : `translateX(calc(50vw - 50% - ${this.state.active * 100}% + ${id -
-            this.state.active} * 4rem)) scaleY(${1 / 1.2})`,
+        ? `translateX(calc(${baseTransform}))`
+        : `translateX(calc(${baseTransform} + ${id -
+            this.state.active} * ${imageIndent})) scaleY(${1 / 1.2})`,
       opacity: this.state.active === id ? 1.0 : 0.5,
     };
   }
 
-  navImage(id: number) {
+  navigate(id: number) {
     const lastImage = this.props.images.length - 1;
 
     if (id < 0) this.setState({ active: lastImage });
@@ -88,15 +105,7 @@ class Carousel extends Component {
       <Modal onClick={this.props.closePortal}>
         {images.map((image, id) =>
           (<CarouselImage
-            onClick={
-              this.state.active === id
-                ? e =>
-                    this.onImageClick(
-                      e,
-                      imageCounter > id + 1 ? id + 1 : (this.onImageClick.id = 0),
-                    )
-                : e => this.onImageClick(e, id)
-            }
+            onClick={e => this.onImageClick(e, id)}
             style={this.getItemTransformation(id)}
             key={image.id}
             src={`${imagesUrl + image.id}-1024`}
