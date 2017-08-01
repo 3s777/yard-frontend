@@ -13,7 +13,7 @@ export default () =>
     <div>
       <Header />
       <Route exact path="/" component={Complexes} />
-      <Route path="/complexes/:id" component={Complex} />
+      <Route path="/complexes/:slug" component={Complex} />
       <Footer />
     </div>
   </Router>);

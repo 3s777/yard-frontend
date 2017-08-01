@@ -1,10 +1,11 @@
 // @flow
 import React from 'react';
 import { Grid } from 'react-flexbox-grid';
+import Portal from 'react-portal';
 import styled from 'styled-components';
 import pluralize from 'pluralize-ru';
 import { imagesUrl, media } from '../../utils';
-import type { GalleryImage } from '../types';
+import Carousel from './Carousel';
 
 const Gallery = styled.div`
   display: flex;
@@ -13,6 +14,7 @@ const Gallery = styled.div`
 
 const Image = styled.img`
   height: 25rem;
+  cursor: pointer;
 `;
 
 const Counter = styled.div`
@@ -43,38 +45,64 @@ const CounterButton = styled.button`
   border-radius: 0.125rem;
 `;
 
-type Props = { images: Array<GalleryImage>, alt: string };
+export default class GalleryCarousel extends React.Component {
+  state = { isPortalOpened: false, activeImage: 0 };
 
-export default function (props: Props) {
-  const images = props.images || [];
-  const photoPluralize = pluralize(
-    images.length,
-    'фотографий',
-    'фотография',
-    'фотографии',
-    'фотографий',
-  );
+  toggleCarousel = (id: number) => {
+    this.setState(prevState => ({ isPortalOpened: !prevState.isPortalOpened, activeImage: id }));
+  };
 
-  return (
-    <div>
-      <Gallery>
-        {images.map(image =>
-          (<Image
-            key={image.id}
-            src={`${imagesUrl + image.id}-jqestate-512`}
-            srcSet={`${imagesUrl + image.id}-jqestate-1024 2x, ${imagesUrl +
-              image.id}-jqestate-2048 3x `}
-            alt={props.alt}
-          />),
-        )}
-      </Gallery>
-      <Counter>
-        <Grid>
-          <CounterButton>
-            {images.length} {photoPluralize}
-          </CounterButton>
-        </Grid>
-      </Counter>
-    </div>
-  );
+  render() {
+    const { activeImage } = this.state;
+    const images = this.props.images || [];
+    const photoPluralize = pluralize(
+      images.length,
+      'фотографий',
+      'фотография',
+      'фотографии',
+      'фотографий',
+    );
+
+    return (
+      <div>
+        <Gallery>
+          {images.map((image, id) =>
+            (<Image
+              onClick={(e) => {
+                e.stopPropagation();
+                this.toggleCarousel(id);
+              }}
+              key={image.id}
+              src={`${imagesUrl + image.id}-512`}
+              srcSet={`${imagesUrl + image.id}-1024 2x, ${imagesUrl + image.id}-2048 3x `}
+              alt={this.props.alt}
+            />),
+          )}
+        </Gallery>
+        <Counter>
+          <Grid>
+            <CounterButton>
+              {images.length} {photoPluralize}
+            </CounterButton>
+          </Grid>
+        </Counter>
+        <Portal
+          closeOnEsc
+          closeOnOutsideClick
+          isOpened={this.state.isPortalOpened}
+          onClose={() => {
+            this.setState({ isPortalOpened: false });
+          }}
+        >
+          <Carousel
+            onClick={this.props.closeModal}
+            activeImage={activeImage || 0}
+            escHandler={this.toggleCarousel}
+            images={this.props.images}
+            closeModal={this.props.closeModal}
+          />
+        </Portal>
+      </div>
+    );
+  }
 }
